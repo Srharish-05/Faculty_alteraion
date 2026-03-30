@@ -57,6 +57,10 @@ class FacultyDB {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ ...data, id: email })
             });
+            if (!response.ok) {
+                const errorData = await response.json();
+                return { error: errorData.error || 'Failed to save profile' };
+            }
             return await response.json();
         } catch (e) {
             console.error('Database Error:', e);
@@ -104,6 +108,11 @@ class FacultyDB {
                     data: data
                 })
             });
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Failed to send notification:', errorData);
+                return null;
+            }
             return await response.json();
         } catch (e) {
             console.error('Database Error:', e);
@@ -114,6 +123,7 @@ class FacultyDB {
     async getNotifications(userId) {
         try {
             const response = await fetch(`${API_URL}/notifications/${userId}`);
+            if (!response.ok) return [];
             return await response.json();
         } catch (e) {
             console.error('Database Error:', e);
@@ -124,6 +134,7 @@ class FacultyDB {
     async getAllNotifications() {
         try {
             const response = await fetch(`${API_URL}/notifications`);
+            if (!response.ok) return [];
             return await response.json();
         } catch (e) {
             console.error('Database Error:', e);
@@ -133,21 +144,33 @@ class FacultyDB {
 
     async markAsRead(notifId) {
         try {
-            await fetch(`${API_URL}/notifications/${notifId}/read`, {
+            const response = await fetch(`${API_URL}/notifications/${notifId}/read`, {
                 method: 'PUT'
             });
+            if (!response.ok) {
+                console.error('Failed to mark notification as read');
+                return false;
+            }
+            return true;
         } catch (e) {
             console.error('Database Error:', e);
+            return false;
         }
     }
 
     async deleteProfile(email) {
         try {
-            await fetch(`${API_URL}/profiles/${email}`, {
+            const response = await fetch(`${API_URL}/profiles/${email}`, {
                 method: 'DELETE'
             });
+            if (!response.ok) {
+                console.error('Failed to delete profile');
+                return false;
+            }
+            return true;
         } catch (e) {
             console.error('Database Error:', e);
+            return false;
         }
     }
 

@@ -632,9 +632,17 @@
         function saveFaculty(event) {
             event.preventDefault();
             
+            const facultyId = document.getElementById('facultyId').value;
+            const facultyName = document.getElementById('facultyName').value;
+            
+            if (!facultyId || !facultyName) {
+                showAlert('Faculty ID and Name are required', 'error');
+                return;
+            }
+
             const data = {
-                id: document.getElementById('facultyId').value,
-                name: document.getElementById('facultyName').value,
+                id: facultyId,
+                name: facultyName,
                 dept: document.getElementById('facultyDept').value,
                 desig: document.getElementById('facultyDesig').value,
                 role: document.getElementById('facultyRole').value,
@@ -658,7 +666,12 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             })
-            .then(r => r.json())
+            .then(r => {
+                if (!r.ok) {
+                    return r.json().then(err => Promise.reject(err));
+                }
+                return r.json();
+            })
             .then(res => {
                 if (res.success) {
                     showAlert(currentFacultyId ? 'Faculty updated successfully!' : 'Faculty added successfully!', 'success');
@@ -668,7 +681,7 @@
                     showAlert(res.error || 'Error saving faculty', 'error');
                 }
             })
-            .catch(e => showAlert('Error: ' + e.message, 'error'));
+            .catch(e => showAlert(e.error || e.message || 'Error saving faculty', 'error'));
         }
 
         function deleteFaculty(id) {
@@ -679,7 +692,12 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ adminId })
             })
-            .then(r => r.json())
+            .then(r => {
+                if (!r.ok) {
+                    return r.json().then(err => Promise.reject(err));
+                }
+                return r.json();
+            })
             .then(res => {
                 if (res.success) {
                     showAlert('Faculty deleted successfully!', 'success');
@@ -688,7 +706,7 @@
                     showAlert(res.error || 'Error deleting faculty', 'error');
                 }
             })
-            .catch(e => showAlert('Error: ' + e.message, 'error'));
+            .catch(e => showAlert(e.error || e.message || 'Error deleting faculty', 'error'));
         }
 
         // Notifications
@@ -724,10 +742,22 @@
 
         function saveNotification(event) {
             event.preventDefault();
+            const from = document.getElementById('notifFrom').value;
+            const to = document.getElementById('notifTo').value;
+            const message = document.getElementById('notifMessage').value;
+
+            if (!from || !to || !message) {
+                showAlert('Please fill all required fields', 'error');
+                return;
+            }
+
             const data = {
-                from: document.getElementById('notifFrom').value,
-                to: document.getElementById('notifTo').value,
-                message: document.getElementById('notifMessage').value
+                from: from,
+                to: to,
+                fromName: adminName || from,
+                message: message,
+                type: 'alert',
+                data: { msg: message }
             };
 
             fetch('/api/notifications', {
@@ -737,9 +767,13 @@
             })
             .then(r => r.json())
             .then(res => {
-                showAlert('Notification sent!', 'success');
-                closeNotificationModal();
-                loadNotificationsData();
+                if (res.success || res.id) {
+                    showAlert('Notification sent successfully!', 'success');
+                    closeNotificationModal();
+                    loadNotificationsData();
+                } else {
+                    showAlert(res.error || 'Error sending notification', 'error');
+                }
             })
             .catch(e => showAlert('Error: ' + e.message, 'error'));
         }

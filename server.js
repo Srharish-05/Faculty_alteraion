@@ -50,8 +50,11 @@ const curriculumSchema = new mongoose.Schema({
 const notificationSchema = new mongoose.Schema({
   id: Number,
   from: String,
+  fromName: String,
   to: String,
   message: String,
+  type: { type: String, default: 'alert' },
+  data: mongoose.Schema.Types.Mixed,
   timestamp: Date,
   read: Boolean
 }, { collection: 'notifications', timestamps: true });
@@ -399,6 +402,95 @@ app.post('/api/set-faculty-id', async (req, res) => {
     }
 });
 
+// ==================== ADMIN FACULTY ENDPOINTS ====================
+
+// Get all faculty (admin view)
+app.get('/api/admin/faculty', async (req, res) => {
+    try {
+        const faculties = await Profile.find({ role: { $ne: 'admin' } });
+        res.json(faculties);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Get single faculty (admin view)
+app.get('/api/admin/faculty/:id', async (req, res) => {
+    try {
+        const faculty = await Profile.findOne({ id: req.params.id });
+        if (!faculty) {
+            return res.status(404).json({ error: 'Faculty not found' });
+        }
+        res.json(faculty);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Create faculty (admin)
+app.post('/api/admin/faculty', async (req, res) => {
+    try {
+        const data = req.body;
+        const id = data.id;
+
+        if (!id) {
+            return res.status(400).json({ error: 'Faculty ID is required' });
+        }
+
+        // Hash password if provided
+        if (data.password && data.password.length < 60) {
+            data.password = await hashPassword(data.password);
+        }
+
+        const faculty = await Profile.findOneAndUpdate(
+            { id },
+            data,
+            { upsert: true, new: true }
+        );
+
+        res.json({ success: true, faculty });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Update faculty (admin)
+app.put('/api/admin/faculty/:id', async (req, res) => {
+    try {
+        const data = req.body;
+        const { adminId, ...updateData } = data;
+
+        // Hash password if provided and not already hashed
+        if (updateData.password && updateData.password.length < 60) {
+            updateData.password = await hashPassword(updateData.password);
+        }
+
+        const faculty = await Profile.findOneAndUpdate(
+            { id: req.params.id },
+            updateData,
+            { new: true }
+        );
+
+        if (!faculty) {
+            return res.status(404).json({ error: 'Faculty not found' });
+        }
+
+        res.json({ success: true, faculty });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Delete faculty (admin)
+app.delete('/api/admin/faculty/:id', async (req, res) => {
+    try {
+        await Profile.deleteOne({ id: req.params.id });
+        res.json({ success: true });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 
 // ==================== NOTIFICATIONS ====================
 
@@ -422,14 +514,26 @@ app.get('/api/notifications/:userId', async (req, res) => {
 
 app.post('/api/notifications', async (req, res) => {
     try {
+        const { from, to, fromName, message, type = 'alert', data } = req.body;
+
+        if (!from || !to) {
+            return res.status(400).json({ error: 'from and to fields are required' });
+        }
+
         const notif = new Notification({
             id: Date.now(),
-            ...req.body,
+            from,
+            fromName: fromName || from,
+            to,
+            message: message || '',
+            type,
+            data: data || { msg: message },
             timestamp: new Date(),
             read: false
         });
-        await notif.save();
-        res.json(notif);
+        
+        const saved = await notif.save();
+        res.json({ success: true, ...saved.toObject() });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
