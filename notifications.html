@@ -454,9 +454,9 @@
                 const delay = i * 0.04;
 
                 return `
-                    <div class="notif-item reveal ${!n.read ? 'unread' : ''}"
+                    <div class="notif-item reveal ${!n.read ? 'unread' : ''}" data-notif-id="${n.id}" data-notif-type="${n.type}"
                          style="animation-delay: ${delay}s"
-                         onclick="if(${!n.read}) { (async() => { await db.markAsRead(${n.id}); await loadNotifications(); await updateNotificationBadge('${currentUser.id}'); })() }">
+                         onclick="if(${!n.read} && '${n.type}' !== 'request') { (async() => { await db.markAsRead(${n.id}); await loadNotifications(); await updateNotificationBadge('${currentUser.id}'); })() }">
                         <div class="notif-icon-box" style="background: ${cfg.bg}; color: ${cfg.color};">
                             <i class="fas ${cfg.icon}"></i>
                         </div>
