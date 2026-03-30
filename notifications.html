@@ -435,14 +435,19 @@
                     desc = n.data.msg || 'System Notice';
                 }
 
-                const actions = (n.type === 'request' && !n.read) ? `
-                    <div class="notif-actions">
-                        <button class="btn-accept" onclick="event.stopPropagation(); acceptRequest(${n.id})">
+                const actions = (n.type === 'request' && !n.read && !n.status) ? `
+                    <div class="notif-actions" id="notif-actions-${n.id}">
+                        <button class="btn-accept" onclick="event.stopPropagation(); acceptRequest(${n.id}, this)">
                             <i class="fas fa-check"></i> Accept
                         </button>
-                        <button class="btn-decline" onclick="event.stopPropagation(); rejectRequest(${n.id})">
+                        <button class="btn-decline" onclick="event.stopPropagation(); rejectRequest(${n.id}, this)">
                             Decline
                         </button>
+                    </div>` : (n.type === 'request' && n.status) ? `
+                    <div class="notif-actions" id="notif-actions-${n.id}">
+                        <div style="font-size: 0.78rem; font-weight: 700; ${n.status === 'accepted' ? 'color: #059669' : 'color: #dc2626'}; display: flex; align-items: center; gap: 0.5rem;">
+                            ${n.status === 'accepted' ? '<i class="fas fa-check-circle"></i> Accepted' : '<i class="fas fa-times-circle"></i> Declined'}
+                        </div>
                     </div>` : '';
 
                 const timeStr = formatNotifTime(n.timestamp);
@@ -478,49 +483,87 @@
             return date.toLocaleDateString([], { month: 'short', day: 'numeric' });
         }
 
-        async function acceptRequest(notifId) {
-            const currentUser = await db.getCurrentUser();
-            const notifs = await db.getNotifications(currentUser.id);
-            const n = notifs.find(x => x.id === notifId);
-            if (!n) return;
-
-            // Mark as read
-            await db.markAsRead(notifId);
-
-            // Mark as Substituted in Faculty A (Requester)
-            const facultyA = await db.getProfile(n.from);
-            if (facultyA && facultyA.timetable && facultyA.timetable[n.data.cellId]) {
-                facultyA.timetable[n.data.cellId].isSubstituted = true;
-                facultyA.timetable[n.data.cellId].substituteName = currentUser ? currentUser.name : 'Unknown';
-                await db.saveProfile(n.from, facultyA);
+        async function acceptRequest(notifId, buttonEl) {
+            // Immediately show status and disable user interaction
+            const actionsContainer = document.getElementById(`notif-actions-${notifId}`);
+            if (actionsContainer) {
+                actionsContainer.innerHTML = '<div style="font-size: 0.78rem; font-weight: 700; color: #059669; display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-check-circle"></i> Accepted</div>';
+                actionsContainer.style.pointerEvents = 'none';
             }
 
-            // Send approval notification to the requester
-            await db.sendNotification(n.from, currentUser.id, 'approval', {
-                msg: `Your request for ${n.data.subject} on ${n.data.day} (P${n.data.period}) has been accepted by ${currentUser.name}.`
-            });
+            try {
+                const currentUser = await db.getCurrentUser();
+                const notifs = await db.getNotifications(currentUser.id);
+                const n = notifs.find(x => x.id === notifId);
+                if (!n) return;
 
-            showToast('Request accepted successfully!', 'success');
-            await loadNotifications();
-            if (window.updateNotificationBadge) await updateNotificationBadge(currentUser.id);
+                // Mark as read
+                await db.markAsRead(notifId);
+
+                // Mark as Substituted in Faculty A (Requester)
+                const facultyA = await db.getProfile(n.from);
+                if (facultyA && facultyA.timetable && facultyA.timetable[n.data.cellId]) {
+                    facultyA.timetable[n.data.cellId].isSubstituted = true;
+                    facultyA.timetable[n.data.cellId].substituteName = currentUser ? currentUser.name : 'Unknown';
+                    await db.saveProfile(n.from, facultyA);
+                }
+
+                // Send approval notification to the requester
+                await db.sendNotification(n.from, currentUser.id, 'approval', {
+                    msg: `Your request for ${n.data.subject} on ${n.data.day} (P${n.data.period}) has been accepted by ${currentUser.name}.`
+                });
+
+                showToast('Request accepted successfully!', 'success');
+                // Wait a bit before reloading to ensure DB is updated
+                await new Promise(resolve => setTimeout(resolve, 500));
+                await loadNotifications();
+                if (window.updateNotificationBadge) await updateNotificationBadge(currentUser.id);
+            } catch (err) {
+                console.error('Accept error:', err);
+                showToast('Error accepting request', 'error');
+                // Revert UI on error
+                if (actionsContainer) {
+                    actionsContainer.innerHTML = '<button class="btn-accept" onclick="event.stopPropagation(); acceptRequest(' + notifId + ', this)"><i class="fas fa-check"></i> Accept</button><button class="btn-decline" onclick="event.stopPropagation(); rejectRequest(' + notifId + ', this)">Decline</button>';
+                    actionsContainer.style.pointerEvents = 'auto';
+                }
+            }
         }
 
-        async function rejectRequest(notifId) {
-            const currentUser = await db.getCurrentUser();
-            const notifs = await db.getNotifications(currentUser.id);
-            const n = notifs.find(x => x.id === notifId);
-            if (!n) return;
+        async function rejectRequest(notifId, buttonEl) {
+            // Immediately show status and disable user interaction
+            const actionsContainer = document.getElementById(`notif-actions-${notifId}`);
+            if (actionsContainer) {
+                actionsContainer.innerHTML = '<div style="font-size: 0.78rem; font-weight: 700; color: #dc2626; display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-times-circle"></i> Declined</div>';
+                actionsContainer.style.pointerEvents = 'none';
+            }
 
-            await db.markAsRead(notifId);
+            try {
+                const currentUser = await db.getCurrentUser();
+                const notifs = await db.getNotifications(currentUser.id);
+                const n = notifs.find(x => x.id === notifId);
+                if (!n) return;
 
-            // Send rejection notification to the requester
-            await db.sendNotification(n.from, currentUser.id, 'rejection', {
-                msg: `Your request for ${n.data.subject} on ${n.data.day} (P${n.data.period}) has been declined.`
-            });
+                await db.markAsRead(notifId);
 
-            showToast('Request declined.', 'warning');
-            await loadNotifications();
-            if (window.updateNotificationBadge) await updateNotificationBadge(currentUser.id);
+                // Send rejection notification to the requester
+                await db.sendNotification(n.from, currentUser.id, 'rejection', {
+                    msg: `Your request for ${n.data.subject} on ${n.data.day} (P${n.data.period}) has been declined.`
+                });
+
+                showToast('Request declined.', 'warning');
+                // Wait a bit before reloading to ensure DB is updated
+                await new Promise(resolve => setTimeout(resolve, 500));
+                await loadNotifications();
+                if (window.updateNotificationBadge) await updateNotificationBadge(currentUser.id);
+            } catch (err) {
+                console.error('Decline error:', err);
+                showToast('Error declining request', 'error');
+                // Revert UI on error
+                if (actionsContainer) {
+                    actionsContainer.innerHTML = '<button class="btn-accept" onclick="event.stopPropagation(); acceptRequest(' + notifId + ', this)"><i class="fas fa-check"></i> Accept</button><button class="btn-decline" onclick="event.stopPropagation(); rejectRequest(' + notifId + ', this)">Decline</button>';
+                    actionsContainer.style.pointerEvents = 'auto';
+                }
+            }
         }
     </script>
 </body>

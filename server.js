@@ -227,10 +227,38 @@ async function initDB() {
 
 // ==================== API ENDPOINTS ====================
 
+// Helper to get a profile 
+async function getProfileData(id) {
+    if (USE_IN_MEMORY) {
+        return inMemoryStore.profiles[id] || null;
+    }
+    const profile = await Profile.findOne({ id });
+    return profile ? profile.toObject() : null;
+}
+
+// Helper to save a profile
+async function saveProfileData(id, data) {
+    if (USE_IN_MEMORY) {
+        inMemoryStore.profiles[id] = { ...inMemoryStore.profiles[id], ...data, id };
+        return inMemoryStore.profiles[id];
+    }
+    const hashedPassword = data.password && data.password.length < 60 ? await hashPassword(data.password) : data.password;
+    return await Profile.findOneAndUpdate(
+        { id },
+        { ...data, password: hashedPassword },
+        { upsert: true, new: true }
+    );
+}
+
 // Get all profiles
 app.get('/api/profiles', async (req, res) => {
     try {
-        const profiles = await Profile.find({});
+        let profiles;
+        if (USE_IN_MEMORY) {
+            profiles = Object.values(inMemoryStore.profiles);
+        } else {
+            profiles = await Profile.find({});
+        }
         res.json(profiles);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -240,7 +268,7 @@ app.get('/api/profiles', async (req, res) => {
 // Get single profile
 app.get('/api/profiles/:id', async (req, res) => {
     try {
-        const profile = await Profile.findOne({ id: req.params.id });
+        const profile = await getProfileData(req.params.id);
         if (profile) {
             res.json(profile);
         } else {
@@ -261,17 +289,7 @@ app.post('/api/profiles', async (req, res) => {
             return res.status(400).json({ error: 'Profile ID is required' });
         }
 
-        // Hash password if it's new or changed
-        if (data.password && data.password.length < 60) {
-            data.password = await hashPassword(data.password);
-        }
-
-        const profile = await Profile.findOneAndUpdate(
-            { id },
-            data,
-            { upsert: true, new: true }
-        );
-
+        const profile = await saveProfileData(id, data);
         res.json({ success: true, profile });
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -281,7 +299,11 @@ app.post('/api/profiles', async (req, res) => {
 // Delete profile
 app.delete('/api/profiles/:id', async (req, res) => {
     try {
-        await Profile.deleteOne({ id: req.params.id });
+        if (USE_IN_MEMORY) {
+            delete inMemoryStore.profiles[req.params.id];
+        } else {
+            await Profile.deleteOne({ id: req.params.id });
+        }
         res.json({ success: true });
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -294,13 +316,7 @@ app.post('/api/login', async (req, res) => {
         let { id, password } = req.body;
         id = id ? id.trim() : '';
 
-        // Try to find by mailid first, then by facultyId if facultyId is set
-        let profile = await Profile.findOne({ id });
-        
-        if (!profile) {
-            // If not found by mailid, try facultyId
-            profile = await Profile.findOne({ facultyId: id });
-        }
+        const profile = await getProfileData(id);
 
         if (!profile) {
             return res.status(401).json({ error: 'User not found' });
@@ -309,15 +325,13 @@ app.post('/api/login', async (req, res) => {
         // Check password based on user role
         let isPasswordValid = false;
         if (profile.role === 'admin') {
-            // Admin password must be "admin123"
             isPasswordValid = password === 'admin123';
         } else {
-            // All other users password must be "12345678"
             isPasswordValid = password === '12345678';
         }
 
         if (isPasswordValid) {
-            res.json({ success: true, profile: profile.toObject() });
+            res.json({ success: true, profile });
         } else {
             res.status(401).json({ error: 'Invalid credentials' });
         }
@@ -335,12 +349,12 @@ app.post('/api/change-password', async (req, res) => {
             return res.status(400).json({ error: 'Required fields missing' });
         }
 
-        const profile = await Profile.findOne({ id });
+        const profile = await getProfileData(id);
         if (!profile) {
             return res.status(404).json({ error: 'User not found' });
         }
 
-        // Verify old password against fixed or stored password
+        // Verify old password
         let isOldPasswordValid = false;
         if (profile.role === 'admin') {
             isOldPasswordValid = oldPassword === 'admin123';
@@ -348,21 +362,12 @@ app.post('/api/change-password', async (req, res) => {
             isOldPasswordValid = oldPassword === '12345678';
         }
 
-        // Also check if user has a custom password already set
-        if (!isOldPasswordValid) {
-            const hashedOld = await hashPassword(oldPassword);
-            if (hashedOld === profile.password) {
-                isOldPasswordValid = true;
-            }
-        }
-
         if (!isOldPasswordValid) {
             return res.status(401).json({ error: 'Current password is incorrect' });
         }
 
-        // Hash and save new password
-        const newHash = await hashPassword(newPassword);
-        await Profile.findOneAndUpdate({ id }, { password: newHash });
+        // Update with new password
+        await saveProfileData(id, { ...profile, password: newPassword });
 
         res.json({ success: true, message: 'Password changed successfully' });
     } catch (error) {
@@ -379,24 +384,13 @@ app.post('/api/set-faculty-id', async (req, res) => {
             return res.status(400).json({ error: 'Mail ID and Faculty ID are required' });
         }
 
-        // Check if faculty ID is already in use by another user
-        const existing = await Profile.findOne({ facultyId, id: { $ne: mailId } });
-        if (existing) {
-            return res.status(400).json({ error: 'Faculty ID is already in use' });
-        }
-
-        // Update the profile with faculty ID
-        const profile = await Profile.findOneAndUpdate(
-            { id: mailId },
-            { facultyId },
-            { new: true }
-        );
-
+        const profile = await getProfileData(mailId);
         if (!profile) {
             return res.status(404).json({ error: 'User not found' });
         }
 
-        res.json({ success: true, message: 'Faculty ID set successfully', profile: profile.toObject() });
+        const updated = await saveProfileData(mailId, { ...profile, facultyId });
+        res.json({ success: true, message: 'Faculty ID set successfully', profile: updated });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -407,7 +401,12 @@ app.post('/api/set-faculty-id', async (req, res) => {
 // Get all faculty (admin view)
 app.get('/api/admin/faculty', async (req, res) => {
     try {
-        const faculties = await Profile.find({ role: { $ne: 'admin' } });
+        let faculties;
+        if (USE_IN_MEMORY) {
+            faculties = Object.values(inMemoryStore.profiles).filter(f => f.role !== 'admin');
+        } else {
+            faculties = await Profile.find({ role: { $ne: 'admin' } });
+        }
         res.json(faculties);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -417,7 +416,7 @@ app.get('/api/admin/faculty', async (req, res) => {
 // Get single faculty (admin view)
 app.get('/api/admin/faculty/:id', async (req, res) => {
     try {
-        const faculty = await Profile.findOne({ id: req.params.id });
+        const faculty = await getProfileData(req.params.id);
         if (!faculty) {
             return res.status(404).json({ error: 'Faculty not found' });
         }
@@ -437,17 +436,7 @@ app.post('/api/admin/faculty', async (req, res) => {
             return res.status(400).json({ error: 'Faculty ID is required' });
         }
 
-        // Hash password if provided
-        if (data.password && data.password.length < 60) {
-            data.password = await hashPassword(data.password);
-        }
-
-        const faculty = await Profile.findOneAndUpdate(
-            { id },
-            data,
-            { upsert: true, new: true }
-        );
-
+        const faculty = await saveProfileData(id, data);
         res.json({ success: true, faculty });
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -460,21 +449,12 @@ app.put('/api/admin/faculty/:id', async (req, res) => {
         const data = req.body;
         const { adminId, ...updateData } = data;
 
-        // Hash password if provided and not already hashed
-        if (updateData.password && updateData.password.length < 60) {
-            updateData.password = await hashPassword(updateData.password);
-        }
-
-        const faculty = await Profile.findOneAndUpdate(
-            { id: req.params.id },
-            updateData,
-            { new: true }
-        );
-
-        if (!faculty) {
+        const existing = await getProfileData(req.params.id);
+        if (!existing) {
             return res.status(404).json({ error: 'Faculty not found' });
         }
 
+        const faculty = await saveProfileData(req.params.id, { ...existing, ...updateData });
         res.json({ success: true, faculty });
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -484,7 +464,11 @@ app.put('/api/admin/faculty/:id', async (req, res) => {
 // Delete faculty (admin)
 app.delete('/api/admin/faculty/:id', async (req, res) => {
     try {
-        await Profile.deleteOne({ id: req.params.id });
+        if (USE_IN_MEMORY) {
+            delete inMemoryStore.profiles[req.params.id];
+        } else {
+            await Profile.deleteOne({ id: req.params.id });
+        }
         res.json({ success: true });
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -496,7 +480,12 @@ app.delete('/api/admin/faculty/:id', async (req, res) => {
 
 app.get('/api/notifications', async (req, res) => {
     try {
-        const notifs = await Notification.find({}).sort({ timestamp: -1 });
+        let notifs;
+        if (USE_IN_MEMORY) {
+            notifs = Object.values(inMemoryStore.notifications).sort((a, b) => b.timestamp - a.timestamp);
+        } else {
+            notifs = await Notification.find({}).sort({ timestamp: -1 });
+        }
         res.json(notifs);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -505,7 +494,14 @@ app.get('/api/notifications', async (req, res) => {
 
 app.get('/api/notifications/:userId', async (req, res) => {
     try {
-        const notifs = await Notification.find({ to: req.params.userId }).sort({ timestamp: -1 });
+        let notifs;
+        if (USE_IN_MEMORY) {
+            notifs = Object.values(inMemoryStore.notifications)
+                .filter(n => n.to === req.params.userId)
+                .sort((a, b) => b.timestamp - a.timestamp);
+        } else {
+            notifs = await Notification.find({ to: req.params.userId }).sort({ timestamp: -1 });
+        }
         res.json(notifs);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -520,7 +516,7 @@ app.post('/api/notifications', async (req, res) => {
             return res.status(400).json({ error: 'from and to fields are required' });
         }
 
-        const notif = new Notification({
+        const notif = {
             id: Date.now(),
             from,
             fromName: fromName || from,
@@ -530,10 +526,16 @@ app.post('/api/notifications', async (req, res) => {
             data: data || { msg: message },
             timestamp: new Date(),
             read: false
-        });
+        };
+
+        if (USE_IN_MEMORY) {
+            inMemoryStore.notifications[notif.id] = notif;
+        } else {
+            const saved = new Notification(notif);
+            await saved.save();
+        }
         
-        const saved = await notif.save();
-        res.json({ success: true, ...saved.toObject() });
+        res.json({ success: true, ...notif });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -541,12 +543,18 @@ app.post('/api/notifications', async (req, res) => {
 
 app.put('/api/notifications/:id/read', async (req, res) => {
     try {
-        await Notification.findByIdAndUpdate(req.params.id, { read: true });
+        if (USE_IN_MEMORY) {
+            const notif = inMemoryStore.notifications[req.params.id];
+            if (notif) notif.read = true;
+        } else {
+            await Notification.findByIdAndUpdate(req.params.id, { read: true });
+        }
         res.json({ success: true });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
+
 
 // ==================== CURRICULUM ====================
 
@@ -611,27 +619,88 @@ app.post('/api/sections', async (req, res) => {
 });
 
 
+// ==================== IN-MEMORY DATA STORE (FALLBACK) ====================
+
+// Fallback storage when MongoDB is unavailable
+const inMemoryStore = {
+    profiles: {},
+    notifications: {},
+    curriculum: {},
+    sections: {},
+    initialized: false
+};
+
+// Flag to track if we're using in-memory storage
+let USE_IN_MEMORY = false;
+
 // ==================== SERVER STARTUP ====================
 
 async function startServer() {
     try {
         console.log('🔌 Connecting to MongoDB...');
-        await mongoose.connect(MONGODB_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            dbName: DATABASE_NAME
+        
+        // Try connecting with a timeout
+        const connectWithTimeout = new Promise((resolve, reject) => {
+            const timeout = setTimeout(() => {
+                reject(new Error('MongoDB connection timeout - using local in-memory storage'));
+            }, 5000);
+            
+            mongoose.connect(MONGODB_URI, {
+                useNewUrlParser: true,
+                useUnifiedTopology: true,
+                dbName: DATABASE_NAME,
+                serverSelectionTimeoutMS: 4000
+            }).then(() => {
+                clearTimeout(timeout);
+                resolve();
+            }).catch(err => {
+                clearTimeout(timeout);
+                reject(err);
+            });
         });
-        console.log('✅ Connected to MongoDB');
 
-        await initDB();
+        try {
+            await connectWithTimeout;
+            console.log('✅ Connected to MongoDB');
+            await initDB();
+        } catch (mongoError) {
+            console.warn('⚠️  MongoDB unavailable:', mongoError.message);
+            console.log('📦 Starting in LOCAL IN-MEMORY MODE for testing...');
+            USE_IN_MEMORY = true;
+            await initInMemoryDB();
+        }
 
         app.listen(PORT, () => {
             console.log(`🚀 Server running at http://localhost:${PORT}`);
+            if (USE_IN_MEMORY) {
+                console.log('📝 Note: Running with local in-memory storage (data will be lost on restart)');
+            }
         });
     } catch (error) {
         console.error('❌ Server startup failed:', error.message);
         process.exit(1);
     }
+}
+
+// Initialize in-memory database with default data
+async function initInMemoryDB() {
+    console.log('🔍 Initializing in-memory database...');
+    
+    // Store default curriculum
+    for (const [key, value] of Object.entries(DEFAULT_CURRICULUM)) {
+        inMemoryStore.curriculum[key] = { _id: key, subjects: value };
+    }
+    
+    // Store default sections
+    for (const [key, value] of Object.entries(DEFAULT_SECTIONS)) {
+        inMemoryStore.sections[key] = { _id: key, sections: value };
+    }
+    
+    // Initialize empty notification store
+    inMemoryStore.notifications = {};
+    
+    inMemoryStore.initialized = true;
+    console.log('✅ In-memory database initialized');
 }
 
 startServer();

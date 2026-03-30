@@ -649,6 +649,7 @@
                 if (freeCountEl) freeCountEl.innerText = "0";
 
                 if (dayIndex >= 0 && dayIndex <= 4) {
+                    // It's a weekday (Monday to Friday)
                     if (freeCountEl) freeCountEl.innerText = "7";
                     for (let p = 1; p <= 7; p++) {
                         const cellId = `cell-${dayIndex}-${p}`;
@@ -678,6 +679,7 @@
 
                     renderDashboard(todayClasses);
                 } else {
+                    // Weekend - no classes
                     const timeline = document.getElementById('timeline-container');
                     if (timeline) timeline.innerHTML = '<p style="padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.875rem;">No classes scheduled for today.</p>';
                 }
