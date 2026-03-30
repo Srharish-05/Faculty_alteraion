@@ -56,7 +56,8 @@ const notificationSchema = new mongoose.Schema({
   type: { type: String, default: 'alert' },
   data: mongoose.Schema.Types.Mixed,
   timestamp: Date,
-  read: Boolean
+  read: Boolean,
+  status: { type: String, default: null } // null, 'accepted', or 'declined'
 }, { collection: 'notifications', timestamps: true });
 
 const sectionSchema = new mongoose.Schema({
@@ -550,6 +551,28 @@ app.put('/api/notifications/:id/read', async (req, res) => {
             await Notification.findByIdAndUpdate(req.params.id, { read: true });
         }
         res.json({ success: true });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+app.put('/api/notifications/:id/status', async (req, res) => {
+    try {
+        const { status } = req.body;
+        if (!status || !['accepted', 'declined'].includes(status)) {
+            return res.status(400).json({ error: 'Invalid status' });
+        }
+
+        if (USE_IN_MEMORY) {
+            const notif = inMemoryStore.notifications[req.params.id];
+            if (notif) {
+                notif.status = status;
+                notif.read = true;
+            }
+        } else {
+            await Notification.findByIdAndUpdate(req.params.id, { status, read: true });
+        }
+        res.json({ success: true, status });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

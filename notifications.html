@@ -501,6 +501,13 @@
                 // Mark as read
                 await db.markAsRead(notifId);
                 
+                // Save status to database for persistence
+                await fetch('/api/notifications/' + notifId + '/status', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ status: 'accepted' })
+                });
+                
                 // Update notification with accepted status (for persistence)
                 const updatedNotif = { ...n, read: true, status: 'accepted' };
                 
@@ -562,6 +569,13 @@
                 if (!n) return;
 
                 await db.markAsRead(notifId);
+                
+                // Save status to database for persistence
+                await fetch('/api/notifications/' + notifId + '/status', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ status: 'declined' })
+                });
                 
                 // Update notification with declined status (for persistence)
                 const updatedNotif = { ...n, read: true, status: 'declined' };
