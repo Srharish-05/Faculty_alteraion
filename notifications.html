@@ -486,9 +486,10 @@
         async function acceptRequest(notifId, buttonEl) {
             // Immediately show status and disable user interaction
             const actionsContainer = document.getElementById(`notif-actions-${notifId}`);
+            const notifItem = buttonEl.closest('.notif-item');
+            
             if (actionsContainer) {
                 actionsContainer.innerHTML = '<div style="font-size: 0.78rem; font-weight: 700; color: #059669; display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-check-circle"></i> Accepted</div>';
-                actionsContainer.style.pointerEvents = 'none';
             }
 
             try {
@@ -514,17 +515,24 @@
                 });
 
                 showToast('Request accepted successfully!', 'success');
-                // Wait a bit before reloading to ensure DB is updated
-                await new Promise(resolve => setTimeout(resolve, 500));
-                await loadNotifications();
+                
+                // Mark notification as read in UI by removing unread styling
+                if (notifItem) {
+                    notifItem.classList.remove('unread');
+                    const unreadDot = notifItem.querySelector('.unread-dot');
+                    if (unreadDot) unreadDot.style.display = 'none';
+                }
+                
+                // Update badge
                 if (window.updateNotificationBadge) await updateNotificationBadge(currentUser.id);
+                
+                // Keep status visible - don't reload
             } catch (err) {
                 console.error('Accept error:', err);
                 showToast('Error accepting request', 'error');
                 // Revert UI on error
                 if (actionsContainer) {
                     actionsContainer.innerHTML = '<button class="btn-accept" onclick="event.stopPropagation(); acceptRequest(' + notifId + ', this)"><i class="fas fa-check"></i> Accept</button><button class="btn-decline" onclick="event.stopPropagation(); rejectRequest(' + notifId + ', this)">Decline</button>';
-                    actionsContainer.style.pointerEvents = 'auto';
                 }
             }
         }
@@ -532,9 +540,10 @@
         async function rejectRequest(notifId, buttonEl) {
             // Immediately show status and disable user interaction
             const actionsContainer = document.getElementById(`notif-actions-${notifId}`);
+            const notifItem = buttonEl.closest('.notif-item');
+            
             if (actionsContainer) {
                 actionsContainer.innerHTML = '<div style="font-size: 0.78rem; font-weight: 700; color: #dc2626; display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-times-circle"></i> Declined</div>';
-                actionsContainer.style.pointerEvents = 'none';
             }
 
             try {
@@ -551,17 +560,24 @@
                 });
 
                 showToast('Request declined.', 'warning');
-                // Wait a bit before reloading to ensure DB is updated
-                await new Promise(resolve => setTimeout(resolve, 500));
-                await loadNotifications();
+                
+                // Mark notification as read in UI by removing unread styling
+                if (notifItem) {
+                    notifItem.classList.remove('unread');
+                    const unreadDot = notifItem.querySelector('.unread-dot');
+                    if (unreadDot) unreadDot.style.display = 'none';
+                }
+                
+                // Update badge
                 if (window.updateNotificationBadge) await updateNotificationBadge(currentUser.id);
+                
+                // Keep status visible - don't reload
             } catch (err) {
                 console.error('Decline error:', err);
                 showToast('Error declining request', 'error');
                 // Revert UI on error
                 if (actionsContainer) {
                     actionsContainer.innerHTML = '<button class="btn-accept" onclick="event.stopPropagation(); acceptRequest(' + notifId + ', this)"><i class="fas fa-check"></i> Accept</button><button class="btn-decline" onclick="event.stopPropagation(); rejectRequest(' + notifId + ', this)">Decline</button>';
-                    actionsContainer.style.pointerEvents = 'auto';
                 }
             }
         }
