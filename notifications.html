@@ -435,7 +435,7 @@
                     desc = n.data.msg || 'System Notice';
                 }
 
-                const actions = (n.type === 'request' && !n.read && !n.status) ? `
+                const actions = (n.type === 'request' && !n.status) ? `
                     <div class="notif-actions" id="notif-actions-${n.id}">
                         <button class="btn-accept" onclick="event.stopPropagation(); acceptRequest(${n.id}, this)">
                             <i class="fas fa-check"></i> Accept
@@ -500,6 +500,15 @@
 
                 // Mark as read
                 await db.markAsRead(notifId);
+                
+                // Update notification with accepted status (for persistence)
+                const updatedNotif = { ...n, read: true, status: 'accepted' };
+                
+                // If using in-memory storage, update it
+                if (window.db && window.db._useInMemory) {
+                    window.db._inMemoryNotifications = window.db._inMemoryNotifications || {};
+                    window.db._inMemoryNotifications[notifId] = updatedNotif;
+                }
 
                 // Mark as Substituted in Faculty A (Requester)
                 const facultyA = await db.getProfile(n.from);
@@ -553,6 +562,15 @@
                 if (!n) return;
 
                 await db.markAsRead(notifId);
+                
+                // Update notification with declined status (for persistence)
+                const updatedNotif = { ...n, read: true, status: 'declined' };
+                
+                // If using in-memory storage, update it
+                if (window.db && window.db._useInMemory) {
+                    window.db._inMemoryNotifications = window.db._inMemoryNotifications || {};
+                    window.db._inMemoryNotifications[notifId] = updatedNotif;
+                }
 
                 // Send rejection notification to the requester
                 await db.sendNotification(n.from, currentUser.id, 'rejection', {
