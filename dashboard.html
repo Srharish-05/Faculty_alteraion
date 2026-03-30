@@ -716,18 +716,14 @@
 
                 // Calculate Detailed Stats
                 const takeoverApproved = allNotifs.filter(n => 
-                    n.to === currentUser.id && n.type === 'approval' && n.data?.msg?.toLowerCase().includes('takeover')
+                    n.to === currentUser.id && n.type === 'approval'
                 ).length;
                 const takeoverPending = allNotifs.filter(n => 
-                    n.from === currentUser.id && n.type === 'hod_request'
+                    n.from === currentUser.id && n.type === 'request'
                 ).length;
 
-                const helpApproved = allNotifs.filter(n => 
-                    n.to === currentUser.id && n.type === 'approval' && !n.data?.msg?.toLowerCase().includes('takeover')
-                ).length;
-                const helpPending = allNotifs.filter(n => 
-                    (n.from === currentUser.id && n.type === 'request') || 
-                    (n.type === 'hod_request' && n.data?.facultyA === currentUser.id)
+                const helpApproved = 0;
+                const helpPending = 0;
                 ).length;
 
                 // Update UI elements
@@ -762,11 +758,9 @@
                         if (n.type === 'request') {
                             msg = isSent ? `You requested help for ${sub}` : `Substitution request from ${n.fromName}`;
                         } else if (n.type === 'approval') {
-                            msg = `Request finalized by ${n.fromName}`;
+                            msg = `Request accepted by ${n.fromName}`;
                         } else if (n.type === 'rejection') {
                             msg = `${n.fromName} declined request`;
-                        } else if (n.type === 'hod_request') {
-                            msg = `Awaiting HOD approval for ${sub}`;
                         } else {
                             msg = 'System updated';
                         }

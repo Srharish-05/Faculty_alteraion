@@ -434,10 +434,10 @@
             const allNotifs = await db.getAllNotifications();
 
             // Filter for requests I SENT or outcomes I RECEIVED
-            // We include 'request' and 'hod_request' I sent
+            // We include 'request' I sent
             // And 'approval' and 'rejection' sent TO me
             const myRequests = allNotifs.filter(n =>
-                (n.from === userId && (n.type === 'request' || n.type === 'hod_request')) ||
+                (n.from === userId && n.type === 'request') ||
                 (n.to === userId && (n.type === 'approval' || n.type === 'rejection'))
             );
 
@@ -467,15 +467,12 @@
 
                 if (req.type === 'approval') {
                     statusBadge = '<span class="status-badge badge-approved"><i class="fas fa-circle-check"></i> Approved</span>';
-                    respNote = 'Confirmed by HOD';
+                    respNote = 'Faculty Accepted';
                     approved++;
                 } else if (req.type === 'rejection') {
                     statusBadge = '<span class="status-badge badge-canceled"><i class="fas fa-ban"></i> Rejected</span>';
                     respNote = 'Declined';
                     canceled++;
-                } else if (req.type === 'hod_request') {
-                    statusBadge = '<span class="status-badge badge-pending"><i class="fas fa-user-shield"></i> Awaiting HOD</span>';
-                    respNote = 'Faculty Accepted';
                 } else {
                     statusBadge = '<span class="status-badge badge-pending"><i class="fas fa-clock"></i> Pending</span>';
                     respNote = 'Sent';

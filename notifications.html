@@ -419,7 +419,6 @@
             container.innerHTML = notifs.map((n, i) => {
                 const typeMap = {
                     request: { icon: 'fa-exchange-alt', color: '#d97706', bg: 'rgba(245,158,11,0.1)', title: 'Substitution Request' },
-                    hod_request: { icon: 'fa-user-shield', color: '#7c3aed', bg: 'rgba(124,58,237,0.1)', title: 'HOD Approval Required' },
                     approval: { icon: 'fa-circle-check', color: '#059669', bg: 'rgba(16,185,129,0.1)', title: 'Request Accepted' },
                     rejection: { icon: 'fa-circle-xmark', color: '#dc2626', bg: 'rgba(239,68,68,0.1)', title: 'Request Declined' },
                 };
@@ -428,23 +427,21 @@
                 let desc = '';
                 if (n.type === 'request') {
                     desc = `<b>${n.fromName}</b> has requested you to cover their <b>${n.data.subject}</b> class on <b>${n.data.day}</b> (Period ${n.data.period}).`;
-                } else if (n.type === 'hod_request') {
-                    desc = `<b>${n.fromName}</b> wants to cover <b>${n.data.fromName}'s</b> class (<b>${n.data.subject}</b> for ${n.data.section}, Year ${n.data.year} on ${n.data.day}, P${n.data.period}). Requires your approval.`;
                 } else if (n.type === 'approval') {
-                    desc = `<b>${n.fromName}</b> <b style="color:#059669">accepted</b> your takeover request for ${n.data.msg}.`;
+                    desc = `<b>${n.fromName}</b> <b style="color:#059669">accepted</b> your request for ${n.data.msg}.`;
                 } else if (n.type === 'rejection') {
-                    desc = `<b>${n.fromName}</b> <b style="color:#dc2626">declined</b> your takeover request for ${n.data.msg}.`;
+                    desc = `<b>${n.fromName}</b> <b style="color:#dc2626">declined</b> your request for ${n.data.msg}.`;
                 } else {
                     desc = n.data.msg || 'System Notice';
                 }
 
-                const actions = ((n.type === 'request' || n.type === 'hod_request') && !n.read) ? `
+                const actions = (n.type === 'request' && !n.read) ? `
                     <div class="notif-actions">
                         <button class="btn-accept" onclick="event.stopPropagation(); acceptRequest(${n.id})">
-                            <i class="fas fa-check"></i> ${currentUser.role === 'hod' ? 'Approve' : 'Accept'}
+                            <i class="fas fa-check"></i> Accept
                         </button>
                         <button class="btn-decline" onclick="event.stopPropagation(); rejectRequest(${n.id})">
-                            ${currentUser.role === 'hod' ? 'Reject' : 'Decline'}
+                            Decline
                         </button>
                     </div>` : '';
 
@@ -487,61 +484,23 @@
             const n = notifs.find(x => x.id === notifId);
             if (!n) return;
 
-            if (currentUser.role === 'hod') {
-                // HOD Final Approval
-                const facultyAId = n.data.facultyA;
-                const facultyBId = n.data.facultyB;
+            // Mark as read
+            await db.markAsRead(notifId);
 
-                const facultyA = await db.getProfile(facultyAId);
-                const facultyB = await db.getProfile(facultyBId);
-
-                // 1. Mark as Substituted in Faculty A (Requester)
-                if (facultyA && facultyA.timetable && facultyA.timetable[n.data.cellId]) {
-                    facultyA.timetable[n.data.cellId].isSubstituted = true;
-                    facultyA.timetable[n.data.cellId].substituteName = facultyB ? facultyB.name : 'Unknown';
-                    await db.saveProfile(facultyAId, facultyA);
-                }
-
-                // 2. DO NOT Add to Faculty B (Substitute) - based on user request "do not change the period to another faculty"
-                // The substitute still gets the notification and it's recorded in leave history.
-
-                await db.markAsRead(notifId);
-
-                // Notify both
-                await db.sendNotification(facultyAId, currentUser.id, 'approval', {
-                    msg: `${n.data.subject} on ${n.data.day} (P${n.data.period}) approved by HOD.`
-                });
-                await db.sendNotification(facultyBId, currentUser.id, 'approval', {
-                    msg: `Your takeover of ${n.data.subject} was approved by HOD.`
-                });
-
-                showToast('Request finalized and timetable updated!', 'success');
-            } else {
-                // Faculty Initial Approval -> Send to HOD
-                const faculties = await db.getAllFaculties();
-                const hod = faculties.find(f => f.role === 'hod' && f.dept === currentUser.dept);
-
-                if (!hod) {
-                    showToast('HOD not found for your department. Approval failed.', 'error');
-                    return;
-                }
-
-                await db.sendNotification(hod.id, currentUser.id, 'hod_request', {
-                    facultyA: n.from,
-                    facultyB: currentUser.id,
-                    cellId: n.data.cellId,
-                    subject: n.data.subject,
-                    section: n.data.section,
-                    year: n.data.year,
-                    day: n.data.day,
-                    period: n.data.period,
-                    fromName: n.fromName
-                });
-
-                await db.markAsRead(notifId);
-                showToast('Accepted! Awaiting HOD final approval.', 'info');
+            // Mark as Substituted in Faculty A (Requester)
+            const facultyA = await db.getProfile(n.from);
+            if (facultyA && facultyA.timetable && facultyA.timetable[n.data.cellId]) {
+                facultyA.timetable[n.data.cellId].isSubstituted = true;
+                facultyA.timetable[n.data.cellId].substituteName = currentUser ? currentUser.name : 'Unknown';
+                await db.saveProfile(n.from, facultyA);
             }
 
+            // Send approval notification to the requester
+            await db.sendNotification(n.from, currentUser.id, 'approval', {
+                msg: `Your request for ${n.data.subject} on ${n.data.day} (P${n.data.period}) has been accepted by ${currentUser.name}.`
+            });
+
+            showToast('Request accepted successfully!', 'success');
             await loadNotifications();
             if (window.updateNotificationBadge) await updateNotificationBadge(currentUser.id);
         }
@@ -554,23 +513,12 @@
 
             await db.markAsRead(notifId);
 
-            if (currentUser.role === 'hod') {
-                // HOD Rejection
-                await db.sendNotification(n.data.facultyA, currentUser.id, 'rejection', {
-                    msg: `${n.data.subject} on ${n.data.day} (P${n.data.period}) [HOD Rejected]`
-                });
-                await db.sendNotification(n.data.facultyB, currentUser.id, 'rejection', {
-                    msg: `HOD rejected your takeover of ${n.data.subject}.`
-                });
-                showToast('Request rejected by HOD.', 'warning');
-            } else {
-                // Faculty Rejection
-                await db.sendNotification(n.from, currentUser.id, 'rejection', {
-                    msg: `${n.data.subject} on ${n.data.day} (P${n.data.period})`
-                });
-                showToast('Request declined.', 'warning');
-            }
+            // Send rejection notification to the requester
+            await db.sendNotification(n.from, currentUser.id, 'rejection', {
+                msg: `Your request for ${n.data.subject} on ${n.data.day} (P${n.data.period}) has been declined.`
+            });
 
+            showToast('Request declined.', 'warning');
             await loadNotifications();
             if (window.updateNotificationBadge) await updateNotificationBadge(currentUser.id);
         }
