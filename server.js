@@ -526,11 +526,12 @@ app.post('/api/notifications', async (req, res) => {
             type,
             data: data || { msg: message },
             timestamp: new Date(),
-            read: false
+            read: false,
+            status: null  // null means no decision yet, then 'accepted' or 'declined'
         };
 
         if (USE_IN_MEMORY) {
-            inMemoryStore.notifications[notif.id] = notif;
+            inMemoryStore.notifications[String(notif.id)] = notif;
         } else {
             const saved = new Notification(notif);
             await saved.save();
@@ -545,7 +546,7 @@ app.post('/api/notifications', async (req, res) => {
 app.put('/api/notifications/:id/read', async (req, res) => {
     try {
         if (USE_IN_MEMORY) {
-            const notif = inMemoryStore.notifications[req.params.id];
+            const notif = inMemoryStore.notifications[String(req.params.id)];
             if (notif) notif.read = true;
         } else {
             await Notification.findByIdAndUpdate(req.params.id, { read: true });
@@ -564,7 +565,7 @@ app.put('/api/notifications/:id/status', async (req, res) => {
         }
 
         if (USE_IN_MEMORY) {
-            const notif = inMemoryStore.notifications[req.params.id];
+            const notif = inMemoryStore.notifications[String(req.params.id)];
             if (notif) {
                 notif.status = status;
                 notif.read = true;
