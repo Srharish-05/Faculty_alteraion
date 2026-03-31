@@ -729,6 +729,13 @@
     }
 }
 
+html {
+    width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -839,6 +846,21 @@ body.page-leaving {
     border-radius: var(--radius-md);
     color: var(--text-main);
     font-size: 0.875rem;
+}
+
+/* Mobile input zoom prevention: 16px prevents auto-zoom on focus */
+@media (max-width: 768px) {
+    .form-input,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"],
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
     transition: all 0.2s ease;
     appearance: none;
     -webkit-appearance: none;
@@ -858,11 +880,7 @@ select.form-input {
     border-color: var(--primary-main);
     box-shadow: 0 0 0 3px rgba(0, 74, 137, 0.1);
 }
-
-.form-input:hover {
-    border-color: var(--primary-main);
 }
-
 /* Official Portal Cards */
 .glass-card,
 .card {

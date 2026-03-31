@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Leave History - FacultySync</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700&display=swap"
@@ -329,6 +329,17 @@
             main {
                 max-width: 100% !important;
                 padding: calc(4rem + 1rem) 1rem 1.5rem !important;
+            }
+
+            /* 16px prevents mobile auto-zoom on input focus */
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="search"],
+            textarea,
+            select,
+            .form-input {
+                font-size: 16px !important;
             }
 
             .page-header {

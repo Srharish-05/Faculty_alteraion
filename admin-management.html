@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Admin Management - Faculty Dashboard</title>
     <style>
         * {
@@ -362,6 +362,16 @@
 
         /* Additional mobile responsive styles */
         @media (max-width: 768px) {
+            /* 16px prevents mobile auto-zoom on input focus */
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="search"],
+            textarea,
+            select {
+                font-size: 16px !important;
+            }
+
             .container {
                 padding: calc(3.5rem + 1rem) 1rem 1.5rem !important;
                 max-width: 100% !important;
