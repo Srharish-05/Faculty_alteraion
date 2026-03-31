@@ -225,6 +225,60 @@ async function initDB() {
     }
 }
 
+// ==================== VALIDATION FUNCTIONS ====================
+
+// Validate individual timetable entry format
+function validateTimetableEntry(entry) {
+    if (!entry || typeof entry !== 'object') return false;
+    if (typeof entry.faculty !== 'string' || !entry.faculty) return false;
+    if (typeof entry.subject !== 'string' || !entry.subject) return false;
+    if (typeof entry.type !== 'string' || !entry.type) return false;
+    return true;
+}
+
+// Validate complete timetable structure
+function validateTimetable(timetable) {
+    if (!timetable || typeof timetable !== 'object') return false;
+    
+    const validCells = [
+        'Monday_0', 'Monday_1', 'Monday_3', 'Monday_4', 'Monday_6', 'Monday_9',
+        'Tuesday_0', 'Tuesday_1', 'Tuesday_3', 'Tuesday_4', 'Tuesday_6', 'Tuesday_9',
+        'Wednesday_0', 'Wednesday_1', 'Wednesday_3', 'Wednesday_4', 'Wednesday_6', 'Wednesday_9',
+        'Thursday_0', 'Thursday_1', 'Thursday_3', 'Thursday_4', 'Thursday_6', 'Thursday_9',
+        'Friday_0', 'Friday_1', 'Friday_3', 'Friday_4', 'Friday_6', 'Friday_9'
+    ];
+    
+    for (const [key, value] of Object.entries(timetable)) {
+        if (!validCells.includes(key) && key !== 'free') {
+            console.warn(`Invalid timetable cell: ${key}`);
+            return false;
+        }
+        if (value !== null && !validateTimetableEntry(value)) {
+            console.warn(`Invalid timetable entry at ${key}:`, value);
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+// Normalize curriculum subjects format
+function normalizeCurriculum(curriculum) {
+    if (!Array.isArray(curriculum)) return [];
+    
+    return curriculum.map(subject => {
+        if (typeof subject === 'string') {
+            return { name: subject, type: 'Lecture' };
+        }
+        if (subject && typeof subject === 'object') {
+            return {
+                name: subject.name || subject.subject || '',
+                type: subject.type || 'Lecture'
+            };
+        }
+        return null;
+    }).filter(s => s && s.name);
+}
 
 // ==================== API ENDPOINTS ====================
 
@@ -239,6 +293,12 @@ async function getProfileData(id) {
 
 // Helper to save a profile
 async function saveProfileData(id, data) {
+    // Validate timetable if present
+    if (data.timetable && !validateTimetable(data.timetable)) {
+        console.warn(`Invalid timetable for profile ${id}:`, data.timetable);
+        // Don't fail — just log and continue, as timetable can be partially populated
+    }
+
     if (USE_IN_MEMORY) {
         inMemoryStore.profiles[id] = { ...inMemoryStore.profiles[id], ...data, id };
         return inMemoryStore.profiles[id];
@@ -615,9 +675,12 @@ app.post('/api/curriculum', async (req, res) => {
     try {
         const data = req.body;
         for (const [key, subjects] of Object.entries(data)) {
+            // Normalize curriculum to ensure consistent format
+            const normalized = normalizeCurriculum(subjects);
+            
             await Curriculum.findByIdAndUpdate(
                 key,
-                { _id: key, subjects },
+                { _id: key, subjects: normalized },
                 { upsert: true }
             );
         }

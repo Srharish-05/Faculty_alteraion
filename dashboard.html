@@ -876,7 +876,7 @@
             const available = (allFaculties || []).filter(f =>
                 f.id !== profileData.id &&
                 f.dept === profileData.dept &&
-                !f.timetable[cellId]
+                f.timetable && !f.timetable[cellId]
             );
 
             if (available.length === 0) {
@@ -947,13 +947,14 @@
             }
         }
 
-        // SEARCH LOGIC
+        // SEARCH LOGIC - Add null check for search input
         const searchInput = document.querySelector('.command-search');
-        const resultsDropdown = document.createElement('div');
-        resultsDropdown.className = 'search-results-dropdown';
-        document.querySelector('.navbar-center').appendChild(resultsDropdown);
+        if (searchInput) {
+            const resultsDropdown = document.createElement('div');
+            resultsDropdown.className = 'search-results-dropdown';
+            document.querySelector('.navbar-center').appendChild(resultsDropdown);
 
-        searchInput.addEventListener('input', async (e) => {
+            searchInput.addEventListener('input', async (e) => {
             const query = e.target.value.toLowerCase().trim();
             if (query.length < 2) {
                 resultsDropdown.classList.remove('active');
@@ -1011,11 +1012,12 @@
             resultsDropdown.classList.add('active');
         });
 
-        document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target) && !resultsDropdown.contains(e.target)) {
-                resultsDropdown.classList.remove('active');
-            }
-        });
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !resultsDropdown.contains(e.target)) {
+                    resultsDropdown.classList.remove('active');
+                }
+            });
+        }
 
         // Ctrl + K to focus search handled in common.js
     </script>
