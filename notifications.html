@@ -500,29 +500,33 @@
 
                 // Mark as read
                 await db.markAsRead(notifId);
-                
+
                 // Save status to database for persistence
-                await fetch('/api/notifications/' + notifId + '/status', {
+                const statusRes = await fetch('/api/notifications/' + notifId + '/status', {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ status: 'accepted' })
                 });
-                
-                // Update notification with accepted status (for persistence)
-                const updatedNotif = { ...n, read: true, status: 'accepted' };
-                
-                // If using in-memory storage, update it
-                if (window.db && window.db._useInMemory) {
-                    window.db._inMemoryNotifications = window.db._inMemoryNotifications || {};
-                    window.db._inMemoryNotifications[notifId] = updatedNotif;
+
+                if (!statusRes.ok) {
+                    throw new Error('Failed to save status to database');
                 }
 
-                // Mark as Substituted in Faculty A (Requester)
-                const facultyA = await db.getProfile(n.from);
-                if (facultyA && facultyA.timetable && facultyA.timetable[n.data.cellId]) {
-                    facultyA.timetable[n.data.cellId].isSubstituted = true;
-                    facultyA.timetable[n.data.cellId].substituteName = currentUser ? currentUser.name : 'Unknown';
-                    await db.saveProfile(n.from, facultyA);
+                // Update notification with accepted status (for persistence)
+                const updatedNotif = { ...n, read: true, status: 'accepted' };
+
+                // Mark as Substituted in Faculty A (Requester) - only if cellId exists
+                if (n.data && n.data.cellId) {
+                    try {
+                        const facultyA = await db.getProfile(n.from);
+                        if (facultyA && facultyA.timetable && facultyA.timetable[n.data.cellId]) {
+                            facultyA.timetable[n.data.cellId].isSubstituted = true;
+                            facultyA.timetable[n.data.cellId].substituteName = currentUser ? currentUser.name : 'Unknown';
+                            await db.saveProfile(n.from, facultyA);
+                        }
+                    } catch (timetableErr) {
+                        console.warn('Failed to update timetable:', timetableErr);
+                    }
                 }
 
                 // Send approval notification to the requester
@@ -569,22 +573,22 @@
                 if (!n) return;
 
                 await db.markAsRead(notifId);
-                
+
                 // Save status to database for persistence
-                await fetch('/api/notifications/' + notifId + '/status', {
+                const statusRes = await fetch('/api/notifications/' + notifId + '/status', {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ status: 'declined' })
                 });
+
+                if (!statusRes.ok) {
+                    throw new Error('Failed to save status to database');
+                }
                 
                 // Update notification with declined status (for persistence)
                 const updatedNotif = { ...n, read: true, status: 'declined' };
-                
-                // If using in-memory storage, update it
-                if (window.db && window.db._useInMemory) {
-                    window.db._inMemoryNotifications = window.db._inMemoryNotifications || {};
-                    window.db._inMemoryNotifications[notifId] = updatedNotif;
-                }
+
+                // Note: Timetable not updated on decline - class remains available to others
 
                 // Send rejection notification to the requester
                 await db.sendNotification(n.from, currentUser.id, 'rejection', {

@@ -646,11 +646,10 @@
                 const classesCountEl = document.getElementById('classes-count');
                 const freeCountEl = document.getElementById('free-count');
                 if (classesCountEl) classesCountEl.innerText = "0";
-                if (freeCountEl) freeCountEl.innerText = "0";
+                // Don't hardcode free count - calculate after loading schedule
 
                 if (dayIndex >= 0 && dayIndex <= 4) {
                     // It's a weekday (Monday to Friday)
-                    if (freeCountEl) freeCountEl.innerText = "7";
                     for (let p = 1; p <= 7; p++) {
                         const cellId = `cell-${dayIndex}-${p}`;
                         if (profileData.timetable && profileData.timetable[cellId]) {
@@ -663,17 +662,18 @@
                     const takeoverApprovals = allNotifs.filter(n =>
                         n.to === profileData.id &&
                         n.type === 'approval' &&
-                        n.data && n.data.day === dayName
+                        n.data && n.data.day === dayName &&
+                        n.data.subject && n.data.period  // Add null checks
                     );
 
                     takeoverApprovals.forEach(n => {
                         todayClasses.push({
-                            subject: n.data.subject,
-                            section: n.data.section,
-                            year: n.data.year,
+                            subject: n.data.subject || 'Class',
+                            section: n.data.section || 'N/A',
+                            year: n.data.year || 'N/A',
                             period: n.data.period,
                             isTakeover: true,
-                            originalFaculty: n.data.facultyAName || n.data.requesterName || 'Faculty'
+                            originalFaculty: n.data.facultyAName || n.data.requesterName || n.fromName || 'Faculty'
                         });
                     });
 
@@ -724,9 +724,9 @@
                     n.from === currentUser.id && n.type === 'request'
                 ).length;
 
+                // Help given stats (currently no endpoint to track, set to 0)
                 const helpApproved = 0;
                 const helpPending = 0;
-                ).length;
 
                 // Update UI elements
                 const helpCountEl = document.getElementById('stat-help-given');

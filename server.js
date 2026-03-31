@@ -253,6 +253,10 @@ async function saveProfileData(id, data) {
 
 // Get all profiles
 app.get('/api/profiles', async (req, res) => {
+    // Set cache headers for GET requests
+    res.set('Cache-Control', 'no-cache, must-revalidate');
+    res.set('Pragma', 'no-cache');
+    res.set('Expires', '0');
     try {
         let profiles;
         if (USE_IN_MEMORY) {
@@ -268,6 +272,10 @@ app.get('/api/profiles', async (req, res) => {
 
 // Get single profile
 app.get('/api/profiles/:id', async (req, res) => {
+    // Set cache headers for GET requests
+    res.set('Cache-Control', 'no-cache, must-revalidate');
+    res.set('Pragma', 'no-cache');
+    res.set('Expires', '0');
     try {
         const profile = await getProfileData(req.params.id);
         if (profile) {
@@ -480,6 +488,10 @@ app.delete('/api/admin/faculty/:id', async (req, res) => {
 // ==================== NOTIFICATIONS ====================
 
 app.get('/api/notifications', async (req, res) => {
+    // Set cache headers for GET requests
+    res.set('Cache-Control', 'no-cache, must-revalidate');
+    res.set('Pragma', 'no-cache');
+    res.set('Expires', '0');
     try {
         let notifs;
         if (USE_IN_MEMORY) {
@@ -494,6 +506,10 @@ app.get('/api/notifications', async (req, res) => {
 });
 
 app.get('/api/notifications/:userId', async (req, res) => {
+    // Set cache headers for GET requests
+    res.set('Cache-Control', 'no-cache, must-revalidate');
+    res.set('Pragma', 'no-cache');
+    res.set('Expires', '0');
     try {
         let notifs;
         if (USE_IN_MEMORY) {
@@ -549,7 +565,7 @@ app.put('/api/notifications/:id/read', async (req, res) => {
             const notif = inMemoryStore.notifications[String(req.params.id)];
             if (notif) notif.read = true;
         } else {
-            await Notification.findByIdAndUpdate(req.params.id, { read: true });
+            await Notification.findOneAndUpdate({ id: Number(req.params.id) }, { read: true });
         }
         res.json({ success: true });
     } catch (error) {
@@ -571,7 +587,7 @@ app.put('/api/notifications/:id/status', async (req, res) => {
                 notif.read = true;
             }
         } else {
-            await Notification.findByIdAndUpdate(req.params.id, { status, read: true });
+            await Notification.findOneAndUpdate({ id: Number(req.params.id) }, { status, read: true });
         }
         res.json({ success: true, status });
     } catch (error) {
