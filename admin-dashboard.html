@@ -133,6 +133,75 @@
         .remove-subject-btn:hover {
             opacity: 1;
         }
+
+        /* ========== ADMIN DASHBOARD MOBILE RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .container {
+                padding: calc(3.5rem + 1rem) 1rem 1.5rem !important;
+                max-width: 100% !important;
+            }
+
+            h1 {
+                font-size: 1.25rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr !important;
+                gap: 0.875rem !important;
+            }
+
+            .stream-section {
+                margin-top: 1.5rem;
+            }
+
+            .subject-input-row {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .subject-input-row input,
+            .subject-input-row select {
+                width: 100% !important;
+            }
+
+            .subject-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                padding: 0.875rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: calc(3.5rem + 0.5rem) 0.75rem 1rem !important;
+            }
+
+            h1 {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.875rem !important;
+            }
+
+            .form-group {
+                margin-bottom: 0.875rem;
+            }
+
+            .form-row {
+                gap: 0.625rem !important;
+            }
+
+            .form-input,
+            .form-label {
+                font-size: 0.8rem !important;
+            }
+
+            .btn {
+                font-size: 0.75rem !important;
+                padding: 0.5rem 0.875rem !important;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 

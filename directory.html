@@ -205,6 +205,75 @@
                 stroke-dashoffset: 0;
             }
         }
+
+        /* ========== DIRECTORY PAGE MOBILE RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            main {
+                max-width: 100% !important;
+                padding: calc(4rem + 1rem) 1rem 1.5rem !important;
+            }
+
+            .directory-container {
+                max-width: 100% !important;
+            }
+
+            .directory-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .directory-header h1 {
+                font-size: 1.25rem !important;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .faculty-card {
+                padding: 1rem !important;
+            }
+
+            .faculty-card-header {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .faculty-details {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: calc(3.5rem + 0.5rem) 0.75rem 1rem !important;
+            }
+
+            .directory-header h1 {
+                font-size: 1.1rem !important;
+            }
+
+            .search-bar {
+                font-size: 0.8rem !important;
+                padding: 0.55rem 0.75rem !important;
+            }
+
+            .faculty-card {
+                padding: 0.875rem !important;
+                margin-bottom: 0.875rem;
+            }
+
+            .faculty-name {
+                font-size: 0.95rem !important;
+                font-weight: 600 !important;
+            }
+
+            .faculty-info {
+                font-size: 0.8rem !important;
+            }
+        }
     </style>
 </head>
 

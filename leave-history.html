@@ -323,6 +323,67 @@
             color: #8a94a0;
             font-size: 0.8125rem;
         }
+
+        /* ========== LEAVE HISTORY PAGE MOBILE RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            main {
+                max-width: 100% !important;
+                padding: calc(4rem + 1rem) 1rem 1.5rem !important;
+            }
+
+            .page-header {
+                margin-bottom: 1.5rem;
+                padding-bottom: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.25rem !important;
+                margin-bottom: 0.25rem !important;
+            }
+
+            .page-header p {
+                font-size: 0.75rem !important;
+            }
+
+            .leave-card {
+                padding: 1rem !important;
+                margin-bottom: 0.875rem;
+            }
+
+            .leave-info {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .leave-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: calc(3.5rem + 0.5rem) 0.75rem 1rem !important;
+            }
+
+            .page-header h1 {
+                font-size: 1.1rem !important;
+            }
+
+            .leave-card {
+                padding: 0.875rem !important;
+                margin-bottom: 0.75rem;
+            }
+
+            .leave-title {
+                font-size: 0.95rem !important;
+                font-weight: 600 !important;
+            }
+
+            .leave-meta {
+                font-size: 0.75rem !important;
+            }
+        }
     </style>
 </head>
 

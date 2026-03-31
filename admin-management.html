@@ -359,6 +359,68 @@
                 font-size: 1.8em;
             }
         }
+
+        /* Additional mobile responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: calc(3.5rem + 1rem) 1rem 1.5rem !important;
+                max-width: 100% !important;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr !important;
+                gap: 0.875rem !important;
+            }
+
+            .form-input,
+            .form-label {
+                font-size: 0.9rem !important;
+            }
+
+            .btn {
+                font-size: 0.875rem !important;
+                padding: 0.6rem 1rem !important;
+            }
+
+            table th,
+            table td {
+                padding: 0.75rem !important;
+                font-size: 0.8rem !important;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: calc(3.5rem + 0.5rem) 0.75rem 1rem !important;
+            }
+
+            .header h1 {
+                font-size: 1.25rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .form-input {
+                font-size: 0.8rem !important;
+                padding: 0.55rem 0.625rem !important;
+            }
+
+            .btn {
+                font-size: 0.75rem !important;
+                padding: 0.5rem 0.875rem !important;
+                width: 100%;
+            }
+
+            table th,
+            table td {
+                padding: 0.625rem !important;
+                font-size: 0.7rem !important;
+            }
+        }
     </style>
 </head>
 <body>
