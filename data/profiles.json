@@ -1,0 +1,4318 @@
+{
+  "jeevamkce14@gmail.com": {
+    "id": "jeevamkce14@gmail.com",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Admin",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "phone": "0000000000",
+    "role": "admin",
+    "timetable": {},
+    "subjectHandling": "",
+    "classHandling": "",
+    "photo": null
+  },
+  "kiruthika@mkce.ac.in": {
+    "id": "kiruthika@mkce.ac.in",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Ms. G. Kiruthika",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "phone": "",
+    "timetable": {
+      "cell-0-4": {
+        "subject": "ASIC Design",
+        "year": "3",
+        "time": "12:05-12:55",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-2-6": {
+        "subject": "Analog and Digital Communication Lab",
+        "year": "2",
+        "time": "3:00-3:50",
+        "section": "ECE-D",
+        "batch": "Batch 1"
+      },
+      "cell-0-3": {
+        "subject": "ASIC Design",
+        "year": "3",
+        "time": "11:05-12:05",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-6": {
+        "subject": "Analog and Digital Communication Lab",
+        "year": "2",
+        "time": "3:00-3:50",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-0-7": {
+        "subject": "Analog and Digital Communication Lab",
+        "year": "2",
+        "time": "3:50-4:40",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-1-3": {
+        "subject": "Analog and Digital Communication Lab",
+        "year": "2",
+        "time": "11:05-12:05",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-1-4": {
+        "subject": "Analog and Digital Communication Lab",
+        "year": "2",
+        "time": "12:05-12:55",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-2-3": {
+        "subject": "Analog and Digital Communication Lab",
+        "year": "2",
+        "time": "11:05-12:05",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-2-4": {
+        "subject": "Analog and Digital Communication Lab",
+        "year": "2",
+        "time": "12:05-12:55",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-2-7": {
+        "subject": "Analog and Digital Communication Lab",
+        "year": "2",
+        "time": "3:50-4:40",
+        "section": "ECE-D",
+        "batch": "Batch 1"
+      },
+      "cell-1-6": {
+        "subject": "ASIC Design",
+        "year": "3",
+        "time": "3:00-3:50",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-7": {
+        "subject": "ASIC Design",
+        "year": "3",
+        "time": "3:50-4:40",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-3-3": {
+        "subject": "FPGA Architecture and Programming",
+        "year": "2",
+        "time": "11:05-12:05",
+        "section": "VLSI",
+        "batch": "Batch 1"
+      },
+      "cell-3-4": {
+        "subject": "FPGA Architecture and Programming",
+        "year": "2",
+        "time": "12:05-12:55",
+        "section": "VLSI",
+        "batch": "Batch 1"
+      },
+      "cell-4-3": {
+        "subject": "VLSI System Design Laboratory",
+        "year": "2",
+        "time": "11:05-12:05",
+        "section": "VLSI"
+      },
+      "cell-4-4": {
+        "subject": "VLSI System Design Laboratory",
+        "year": "2",
+        "time": "12:05-12:55",
+        "section": "VLSI"
+      }
+    },
+    "photo": null,
+    "subjectHandling": "ASIC Design, Analog and Digital Communication Lab, FPGA Architecture and Programming, VLSI System Design Laboratory",
+    "classHandling": "2nd Year - ECE-A, 2nd Year - ECE-C, 2nd Year - ECE-D, 2nd Year - VLSI"
+  },
+  "saranya@mkce.ac.in": {
+    "id": "saranya@mkce.ac.in",
+    "password": "967929080f502e0a0f81f71efb7019b62b578d7b7afc2b24ed5ce69714ab9e16",
+    "name": "Mrs. M. Saranya",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "phone": "",
+    "timetable": {
+      "cell-0-1": {
+        "subject": "Renewable Energy Source",
+        "year": "3",
+        "time": "8:45-9:45",
+        "section": "ECE-D"
+      },
+      "cell-0-6": {
+        "subject": "Renewable Energy Source",
+        "year": "3",
+        "time": "3:00-3:50",
+        "section": "ECE-D"
+      },
+      "cell-2-1": {
+        "subject": "Renewable Energy Source",
+        "year": "3",
+        "time": "8:45-9:45",
+        "section": "ECE-D"
+      },
+      "cell-3-2": {
+        "subject": "Renewable Energy Source",
+        "year": "3",
+        "time": "9:45-10:45",
+        "section": "ECE-D"
+      },
+      "cell-2-4": {
+        "subject": "Electronic Circuits Lab",
+        "year": "1",
+        "time": "12:05-12:55",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-2-5": {
+        "subject": "Electronic Circuits Lab",
+        "year": "1",
+        "time": "1:45-2:45",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-2-6": {
+        "subject": "Microwave & Optical Communication Lab",
+        "year": "3",
+        "time": "3:00-3:50",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-2-7": {
+        "subject": "Microwave & Optical Communication Lab",
+        "year": "3",
+        "time": "3:50-4:40",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-3-5": {
+        "subject": "Microwave & Optical Communication Lab",
+        "year": "3",
+        "time": "1:45-2:45",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-3-6": {
+        "subject": "Microwave & Optical Communication Lab",
+        "year": "3",
+        "time": "3:00-3:50",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-4-3": {
+        "subject": "VLSI System Design Laboratory",
+        "year": "2",
+        "time": "11:05-12:05",
+        "section": "VLSI"
+      },
+      "cell-4-4": {
+        "subject": "Analog and Digital Communication",
+        "year": "2",
+        "time": "12:05-12:55",
+        "section": "VLSI"
+      },
+      "cell-4-5": {
+        "subject": "Microwave & Optical Communication Lab",
+        "year": "3",
+        "time": "1:45-2:45",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-4-6": {
+        "subject": "Microwave & Optical Communication Lab",
+        "year": "3",
+        "time": "3:00-3:50",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "photo": null,
+    "subjectHandling": "Analog and Digital Communication, Counselling, Electronic Circuits Lab, Microwave & Optical Communication Lab, Renewable Energy Source, VLSI System Design Laboratory",
+    "classHandling": "1st Year - ECE-C, 2nd Year - VLSI, 3rd Year - ECE-A, 3rd Year - ECE-B, 3rd Year - ECE-D"
+  },
+  "sivakumar@mkce.ac.in": {
+    "id": "sivakumar@mkce.ac.in",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Mr. T. Siva Kumar",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "phone": "",
+    "timetable": {
+      "cell-0-2": {
+        "subject": "Artificial Intelligence",
+        "time": "9:45-10:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-1": {
+        "subject": "Artificial Intelligence",
+        "time": "8:45-9:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-3": {
+        "subject": "Electromagnetic Interference & Compatibility",
+        "time": "11:05-12:05",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-4": {
+        "subject": "Electromagnetic Interference & Compatibility",
+        "time": "12:05-12:55",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-6": {
+        "subject": "Wireless Communication",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-1-2": {
+        "subject": "Wireless Communication",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-3-2": {
+        "subject": "Wireless Communication",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-3-6": {
+        "subject": "Wireless Communication",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-1-6": {
+        "subject": "Electromagnetic Interference & Compatibility",
+        "time": "3:00-3:50",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-7": {
+        "subject": "Electromagnetic Interference & Compatibility",
+        "time": "3:50-4:40",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-2-3": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "none"
+      },
+      "cell-2-4": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "none"
+      },
+      "cell-3-5": {
+        "subject": "Library",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-4-1": {
+        "subject": "Artificial Intelligence",
+        "time": "8:45-9:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "subjectHandling": "Antenna & Millimetrewave Communication Lab, Artificial Intelligence, Counselling, Electromagnetic Interference & Compatibility, Library, Wireless Communication",
+    "classHandling": "3rd Year - ECE-B",
+    "photo": null
+  },
+  "senthamilselvi@mkce.ac.in": {
+    "id": "senthamilselvi@mkce.ac.in",
+    "password": "967929080f502e0a0f81f71efb7019b62b578d7b7afc2b24ed5ce69714ab9e16",
+    "name": "Mrs. M. Senthamilselvi",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "phone": "",
+    "timetable": {
+      "cell-0-2": {
+        "subject": "VLSI System Design",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-0-7": {
+        "subject": "VLSI System Design",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-1-5": {
+        "subject": "VLSI System Design",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-3-1": {
+        "subject": "VLSI System Design",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-1-3": {
+        "subject": "Wireless Communication",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-2-2": {
+        "subject": "Wireless Communication",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-2-5": {
+        "subject": "Wireless Communication",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-3-5": {
+        "subject": "Wireless Communication",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-2-3": {
+        "subject": "Design Project",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      },
+      "cell-2-4": {
+        "subject": "Design Project",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      },
+      "cell-4-5": {
+        "subject": "Design Project",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      },
+      "cell-4-6": {
+        "subject": "Design Project",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      },
+      "cell-4-3": {
+        "subject": "VLSI System Design Laboratory",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-4-4": {
+        "subject": "VLSI System Design Laboratory",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      },
+      "cell-2-6": {
+        "subject": "Library",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-C"
+      }
+    },
+    "photo": null,
+    "subjectHandling": "Counselling, Design Project, Library, VLSI System Design, VLSI System Design Laboratory, Wireless Communication",
+    "classHandling": "2nd Year - VLSI, 3rd Year - ECE-A, 3rd Year - ECE-C"
+  },
+  "ramesh@mkce.ac.in": {
+    "id": "ramesh@mkce.ac.in",
+    "password": "967929080f502e0a0f81f71efb7019b62b578d7b7afc2b24ed5ce69714ab9e16",
+    "name": "Mr. L. Ramesh",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "phone": "",
+    "timetable": {
+      "cell-0-1": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      },
+      "cell-0-2": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      },
+      "cell-0-5": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-1-7": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-2-1": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-4-7": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-1-2": {
+        "subject": "Wireless Communication",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-0-7": {
+        "subject": "Wireless Communication",
+        "time": "3:50-4:40",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-3-3": {
+        "subject": "Wireless Communication",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-4-3": {
+        "subject": "Wireless Communication",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-2-3": {
+        "subject": "Comprehension",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-2-4": {
+        "subject": "Comprehension",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-2-6": {
+        "subject": "Library",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-3-5": {
+        "subject": "Design Project",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      },
+      "cell-3-6": {
+        "subject": "Design Project",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "photo": null,
+    "subjectHandling": "Antenna & Millimetrewave Communication Lab, Comprehension, Counselling, Design Project, Library, Transmission Lines & Waveguide, Wireless Communication",
+    "classHandling": "2nd Year - ECE-D, 3rd Year - ECE-A, 3rd Year - ECE-C"
+  },
+  "revathi@mkce.ac.in": {
+    "id": "revathi@mkce.ac.in",
+    "password": "967929080f502e0a0f81f71efb7019b62b578d7b7afc2b24ed5ce69714ab9e16",
+    "name": "Dr. G. Revathi",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "phone": "",
+    "timetable": {
+      "cell-0-1": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-1-1": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-2-5": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-3-3": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-0-3": {
+        "subject": "Analog and Digital Communication",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-2-2": {
+        "subject": "Analog and Digital Communication",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-4-2": {
+        "subject": "Analog and Digital Communication",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-0-6": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-0-7": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-1-3": {
+        "subject": "Design Project",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "none"
+      },
+      "cell-1-4": {
+        "subject": "Design Project",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "none"
+      },
+      "cell-1-6": {
+        "subject": "Library",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-2-3": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "none"
+      },
+      "cell-2-4": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "none"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "photo": null,
+    "subjectHandling": "Analog and Digital Communication, Analog and Digital Communication Lab, Antenna & Millimetrewave Communication, Antenna & Millimetrewave Communication Lab, Counselling, Design Project, Library",
+    "classHandling": "2nd Year - ECE-C, 3rd Year - ECE-B, 3rd Year - ECE-D"
+  },
+  "jeyakumar@mkce.ac.in": {
+    "id": "jeyakumar@mkce.ac.in",
+    "password": "967929080f502e0a0f81f71efb7019b62b578d7b7afc2b24ed5ce69714ab9e16",
+    "name": "Dr. P. Jeyakumar",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "phone": "",
+    "timetable": {
+      "cell-1-1": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-D"
+      },
+      "cell-2-4": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-D"
+      },
+      "cell-4-3": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-D"
+      },
+      "cell-4-5": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-D"
+      },
+      "cell-4-2": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "none"
+      },
+      "cell-4-1": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "none"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "photo": null,
+    "subjectHandling": "Antenna & Millimetrewave Communication, Antenna & Millimetrewave Communication Lab, Counselling",
+    "classHandling": "3rd Year - ECE-D"
+  },
+  "sheikdavood@mkce.ac.in": {
+    "id": "sheikdavood@mkce.ac.in",
+    "password": "967929080f502e0a0f81f71efb7019b62b578d7b7afc2b24ed5ce69714ab9e16",
+    "name": "Dr. K. Sheikdavood",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "phone": "",
+    "timetable": {
+      "cell-0-6": {
+        "subject": "Database Management System Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-0-7": {
+        "subject": "Database Management System Lab",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-3-1": {
+        "subject": "Database Management System Lab",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-3-2": {
+        "subject": "Database Management System Lab",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-1-3": {
+        "subject": "Microwave & Optical Communication Lab",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "Batch 1"
+      },
+      "cell-1-4": {
+        "subject": "Microwave & Optical Communication Lab",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "Batch 1"
+      },
+      "cell-1-5": {
+        "subject": "Microwave & Optical Communication",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-2-2": {
+        "subject": "Microwave & Optical Communication",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-3-4": {
+        "subject": "Microwave & Optical Communication",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-4-2": {
+        "subject": "Microwave & Optical Communication",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-3-5": {
+        "subject": "Design Project",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "none"
+      },
+      "cell-3-6": {
+        "subject": "Design Project",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "none"
+      },
+      "cell-4-3": {
+        "subject": "Design Project",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "none"
+      },
+      "cell-4-4": {
+        "subject": "Design Project",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "none"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "photo": null,
+    "subjectHandling": "Counselling, Database Management System Lab, Design Project, Microwave & Optical Communication, Microwave & Optical Communication Lab",
+    "classHandling": "2nd Year - ECE-D, 3rd Year - ECE-B, 3rd Year - ECE-D"
+  },
+  "sivaranjani@mkce.ac.in": {
+    "id": "sivaranjani@mkce.ac.in",
+    "password": "967929080f502e0a0f81f71efb7019b62b578d7b7afc2b24ed5ce69714ab9e16",
+    "name": "Dr. S. Sivaranjani",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "phone": "",
+    "timetable": {
+      "cell-0-2": {
+        "subject": "Wireless Communication",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-D"
+      },
+      "cell-0-7": {
+        "subject": "Wireless Communication",
+        "time": "3:50-4:40",
+        "year": "3",
+        "section": "ECE-D"
+      },
+      "cell-1-5": {
+        "subject": "Wireless Communication",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-D"
+      },
+      "cell-2-2": {
+        "subject": "Wireless Communication",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-D"
+      },
+      "cell-1-2": {
+        "subject": "Digital Signal Processing",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-0-5": {
+        "subject": "Digital Signal Processing",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-3-6": {
+        "subject": "Digital Signal Processing",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-4-4": {
+        "subject": "Digital Signal Processing",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-4-5": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-4-6": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-3-1": {
+        "subject": "Database Management System Lab",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-3-2": {
+        "subject": "Database Management System Lab",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-2-3": {
+        "subject": "Database Management System Lab",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-2-4": {
+        "subject": "Database Management System Lab",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "photo": null,
+    "subjectHandling": "Counselling, Database Management System Lab, Digital Signal Processing, Digital Signal Processing Lab, Wireless Communication",
+    "classHandling": "2nd Year - ECE-B, 2nd Year - ECE-C, 3rd Year - ECE-D"
+  },
+  "sivagurunathan@mkce.ac.in": {
+    "id": "sivagurunathan@mkce.ac.in",
+    "password": "967929080f502e0a0f81f71efb7019b62b578d7b7afc2b24ed5ce69714ab9e16",
+    "name": "Dr. P. T. Sivagurunathan",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "phone": "",
+    "timetable": {
+      "cell-1-1": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-2-5": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-3-4": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-4-3": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-2-7": {
+        "subject": "Microwave & Optical Communication",
+        "time": "3:50-4:40",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-4-6": {
+        "subject": "Microwave & Optical Communication",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-4-1": {
+        "subject": "Microwave & Optical Communication",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-1-5": {
+        "subject": "Microwave & Optical Communication",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-1-3": {
+        "subject": "Comprehension",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-1-4": {
+        "subject": "Comprehension",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-3-1": {
+        "subject": "Database Management System Lab",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-3-2": {
+        "subject": "Database Management System Lab",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-3-5": {
+        "subject": "Database Management System Lab",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-3-6": {
+        "subject": "Database Management System Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "photo": null,
+    "subjectHandling": "Comprehension, Counselling, Database Management System Lab, Microwave & Optical Communication, Transmission Lines & Waveguide",
+    "classHandling": "2nd Year - ECE-A, 2nd Year - ECE-C, 3rd Year - ECE-B, 3rd Year - ECE-C"
+  },
+  "sridevi@mkce.ac.in": {
+    "id": "sridevi@mkce.ac.in",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.A.Sridevi",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "phone": "",
+    "timetable": {
+      "cell-0-6": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-0-7": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-2-1": {
+        "subject": "Microcontrollers & Interfacing",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-1-7": {
+        "subject": "Microcontrollers & Interfacing",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-4-7": {
+        "subject": "Microcontrollers & Interfacing",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-1-2": {
+        "subject": "Microwave & Optical Communication",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-D"
+      },
+      "cell-2-3": {
+        "subject": "Microwave & Optical Communication",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-D"
+      },
+      "cell-2-5": {
+        "subject": "Microwave & Optical Communication",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-D"
+      },
+      "cell-4-4": {
+        "subject": "Microwave & Optical Communication",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-D"
+      },
+      "cell-3-3": {
+        "subject": "Microwave & Optical Communication Lab",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "Batch 1"
+      },
+      "cell-3-4": {
+        "subject": "Microwave & Optical Communication Lab",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "Batch 1"
+      },
+      "cell-3-5": {
+        "subject": "Comprehension",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "Batch 1"
+      },
+      "cell-3-6": {
+        "subject": "Comprehension",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "Batch 1"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "photo": null,
+    "subjectHandling": "Comprehension, Counselling, Microcontrollers & Interfacing, Microcontrollers & Interfacing Lab, Microwave & Optical Communication, Microwave & Optical Communication Lab",
+    "classHandling": "2nd Year - ECE-C, 3rd Year - ECE-A, 3rd Year - ECE-D"
+  },
+  "hod_ece@example.com": {
+    "name": "Dr.N.Mahendran",
+    "dept": "ECE",
+    "desig": "Head of Department",
+    "role": "hod",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "timetable": {
+      "cell-0-5": {
+        "subject": "MEMS",
+        "time": "1:45-2:45",
+        "year": "3",
+        "sections": [
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-C",
+        "isElective": true
+      },
+      "cell-3-1": {
+        "subject": "MEMS",
+        "time": "8:45-9:45",
+        "year": "3",
+        "sections": [
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-C",
+        "isElective": true
+      },
+      "cell-4-7": {
+        "subject": "MEMS",
+        "time": "3:50-4:40",
+        "year": "3",
+        "sections": [
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-C",
+        "isElective": true
+      },
+      "cell-1-6": {
+        "subject": "Electromagnetic Interference & Compatibility",
+        "time": "3:00-3:50",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "hod_ece@example.com",
+    "photo": null,
+    "subjectHandling": "Counselling, Electromagnetic Interference & Compatibility, MEMS",
+    "classHandling": "",
+    "phone": ""
+  },
+  "Mohanraj@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Mr.S.Mohanraj",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-5": {
+        "subject": "SoC & NoC Design",
+        "time": "1:45-2:45",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-3-1": {
+        "subject": "SoC & NoC Design",
+        "time": "8:45-9:45",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-4-7": {
+        "subject": "SoC & NoC Design",
+        "time": "3:50-4:40",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-2-6": {
+        "subject": "Design Project",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "none"
+      },
+      "cell-2-7": {
+        "subject": "Design Project",
+        "time": "3:50-4:40",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "none"
+      },
+      "cell-4-3": {
+        "subject": "Design Project",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "none"
+      },
+      "cell-4-4": {
+        "subject": "Design Project",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "none"
+      },
+      "cell-2-3": {
+        "subject": "Microwave & Optical Communication Lab",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-2-4": {
+        "subject": "Microwave & Optical Communication Lab",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-2-2": {
+        "subject": "Digital Signal Processing",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-1-6": {
+        "subject": "Digital Signal Processing",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-3-6": {
+        "subject": "Digital Signal Processing",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-4-5": {
+        "subject": "Digital Signal Processing",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-1-1": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-1-2": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "Mohanraj@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Counselling, Design Project, Digital Signal Processing, Digital Signal Processing Lab, Microwave & Optical Communication Lab, SoC & NoC Design",
+    "classHandling": "2nd Year - ECE-D, 3rd Year - ECE-B, 3rd Year - ECE-C",
+    "phone": ""
+  },
+  "Balamurugan@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.R.Balamurugan",
+    "dept": "ECE",
+    "desig": "Associate Professor",
+    "timetable": {
+      "cell-1-6": {
+        "subject": "Electronic Circuits",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-A"
+      },
+      "cell-2-4": {
+        "subject": "Electronic Circuits",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "ECE-A"
+      },
+      "cell-3-5": {
+        "subject": "Electronic Circuits",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-A"
+      },
+      "cell-4-5": {
+        "subject": "Electronic Circuits",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-A"
+      },
+      "cell-0-5": {
+        "subject": "MEMS",
+        "time": "1:45-2:45",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-4-7": {
+        "subject": "MEMS",
+        "time": "3:50-4:40",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-3-1": {
+        "subject": "MEMS",
+        "time": "8:45-9:45",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-A",
+        "batch": "Batch 1"
+      },
+      "cell-0-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-A",
+        "batch": "Batch 1"
+      },
+      "cell-2-6": {
+        "subject": "Comprehension",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "Batch 1"
+      },
+      "cell-2-7": {
+        "subject": "Comprehension",
+        "time": "3:50-4:40",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "Batch 1"
+      },
+      "cell-3-3": {
+        "subject": "Comprehension",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-3-4": {
+        "subject": "Comprehension",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "Balamurugan@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Comprehension, Counselling, Electronic Circuits, Electronic Circuits Lab, MEMS",
+    "classHandling": "1st Year - ECE-A, 3rd Year - ECE-D",
+    "phone": ""
+  },
+  "Jegadeesan@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.S.Jegadeesan",
+    "dept": "ECE",
+    "desig": "Professor",
+    "timetable": {
+      "cell-2-3": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-2-4": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-2-6": {
+        "subject": "Analog and Digital Communication",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-3-4": {
+        "subject": "Analog and Digital Communication",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-4-7": {
+        "subject": "Analog and Digital Communication",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "Jegadeesan@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Analog and Digital Communication, Counselling, Microcontrollers & Interfacing Lab",
+    "classHandling": "2nd Year - ECE-A, 2nd Year - ECE-C",
+    "phone": ""
+  },
+  "Jagatheesan@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.K.Jagatheesan",
+    "dept": "ECE",
+    "desig": "Professor",
+    "timetable": {
+      "cell-0-6": {
+        "subject": "Electronic Circuits",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-E"
+      },
+      "cell-1-6": {
+        "subject": "Electronic Circuits",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-E"
+      },
+      "cell-2-7": {
+        "subject": "Electronic Circuits",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-E"
+      },
+      "cell-2-4": {
+        "subject": "Electronic Circuits",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "ECE-E"
+      },
+      "cell-3-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-E",
+        "batch": "none"
+      },
+      "cell-3-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-E",
+        "batch": "none"
+      },
+      "cell-0-3": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-0-4": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-1-4": {
+        "subject": "Microcontrollers & Interfacing",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-2-1": {
+        "subject": "Microcontrollers & Interfacing",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-4-5": {
+        "subject": "Microcontrollers & Interfacing",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-4-3": {
+        "subject": "Comprehension",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-4-4": {
+        "subject": "Comprehension",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "Jagatheesan@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Comprehension, Counselling, Electronic Circuits, Electronic Circuits Lab, Microcontrollers & Interfacing, Microcontrollers & Interfacing Lab",
+    "classHandling": "1st Year - ECE-E, 2nd Year - ECE-B, 3rd Year - ECE-C",
+    "phone": ""
+  },
+  "Dinesh@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.E.Dinesh",
+    "dept": "ECE",
+    "desig": "Associate Professor",
+    "timetable": {},
+    "id": "Dinesh@mkce.ac.in"
+  },
+  "nandagopal@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr. C. Nandagopal",
+    "dept": "ECE",
+    "desig": "Associate Professor",
+    "timetable": {
+      "cell-0-5": {
+        "subject": "Microcontrollers & Embedded System",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-1-3": {
+        "subject": "Microcontrollers & Embedded System",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "none"
+      },
+      "cell-3-2": {
+        "subject": "Microcontrollers & Embedded System",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-1-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-B",
+        "batch": "Batch 1"
+      },
+      "cell-1-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-B",
+        "batch": "Batch 1"
+      },
+      "cell-2-1": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-2-2": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-2-6": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-2-7": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-3-3": {
+        "subject": "Microcontrollers & Embedded System Lab",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "Batch 2"
+      },
+      "cell-3-4": {
+        "subject": "Microcontrollers & Embedded System Lab",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "Batch 2"
+      },
+      "cell-3-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-E",
+        "batch": "Batch 2"
+      },
+      "cell-3-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-E",
+        "batch": "Batch 2"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "nandagopal@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Counselling, Digital Signal Processing Lab, Electronic Circuits Lab, Microcontrollers & Embedded System, Microcontrollers & Embedded System Lab, Microcontrollers & Interfacing Lab",
+    "classHandling": "1st Year - ECE-B, 1st Year - ECE-E, 2nd Year - ECE-A, 2nd Year - ECE-D, 2nd Year - VLSI",
+    "phone": ""
+  },
+  "Meivel@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.S.Meivel",
+    "dept": "ECE",
+    "desig": "Associate Professor",
+    "timetable": {
+      "cell-0-1": {
+        "subject": "IoT in Robotics",
+        "time": "8:45-9:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-2": {
+        "subject": "IoT in Robotics",
+        "time": "9:45-10:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-4-1": {
+        "subject": "IoT in Robotics",
+        "time": "8:45-9:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-3": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-A",
+        "batch": "Batch 1"
+      },
+      "cell-1-4": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-A",
+        "batch": "Batch 1"
+      },
+      "cell-2-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-2-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-4-4": {
+        "subject": "Electronic Circuits Lab",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "VLSI",
+        "batch": "Batch 2"
+      },
+      "cell-4-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "VLSI",
+        "batch": "Batch 2"
+      }
+    },
+    "id": "Meivel@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Analog and Digital Communication Lab, Electronic Circuits Lab, IoT in Robotics",
+    "classHandling": "1st Year - ECE-D, 1st Year - VLSI, 2nd Year - ECE-A",
+    "phone": ""
+  },
+  "shanmugavadivel@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr. G. Shanmugavadivel",
+    "dept": "ECE",
+    "desig": "Associate Professor",
+    "timetable": {
+      "cell-0-1": {
+        "subject": "Privacy & Security in IoT",
+        "time": "8:45-9:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-1": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-1-2": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-1-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-1-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-2-6": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "none"
+      },
+      "cell-2-7": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-3-3": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-3-4": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      },
+      "cell-4-1": {
+        "subject": "Privacy & Security in IoT",
+        "time": "8:45-9:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      }
+    },
+    "id": "shanmugavadivel@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Antenna & Millimetrewave Communication Lab, Counselling, Digital Signal Processing Lab, Electronic Circuits Lab, Privacy & Security in IoT",
+    "classHandling": "1st Year - ECE-B, 2nd Year - ECE-D, 2nd Year - VLSI, 3rd Year - ECE-C",
+    "phone": ""
+  },
+  "Mariselvam@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.V.Mariselvam",
+    "dept": "ECE",
+    "desig": "Associate Professor",
+    "timetable": {
+      "cell-0-6": {
+        "subject": "Electronic Circuits",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "VLSI"
+      },
+      "cell-1-6": {
+        "subject": "Electronic Circuits",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "VLSI"
+      },
+      "cell-2-7": {
+        "subject": "Electronic Circuits",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "VLSI"
+      },
+      "cell-3-6": {
+        "subject": "Electronic Circuits",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "VLSI"
+      },
+      "cell-1-1": {
+        "subject": "Microwave & Optical Communication",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-1-4": {
+        "subject": "Microwave & Optical Communication",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-2-5": {
+        "subject": "Microwave & Optical Communication",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-3-2": {
+        "subject": "Microwave & Optical Communication",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-2-1": {
+        "subject": "Microwave & Optical Communication Lab",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "Batch 1"
+      },
+      "cell-2-2": {
+        "subject": "Microwave & Optical Communication Lab",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "Batch 1"
+      },
+      "cell-4-1": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "none"
+      },
+      "cell-4-2": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "none"
+      },
+      "cell-4-4": {
+        "subject": "Electronic Circuits Lab",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "VLSI",
+        "batch": "none"
+      },
+      "cell-4-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "VLSI",
+        "batch": "none"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "Mariselvam@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Antenna & Millimetrewave Communication Lab, Counselling, Electronic Circuits, Electronic Circuits Lab, Microwave & Optical Communication, Microwave & Optical Communication Lab",
+    "classHandling": "1st Year - VLSI, 3rd Year - ECE-A, 3rd Year - ECE-D",
+    "phone": ""
+  },
+  "sivanadam@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr. K. Sivanandam",
+    "dept": "ECE",
+    "desig": "Associate Professor",
+    "timetable": {
+      "cell-0-1": {
+        "subject": "FPGA Architecture and Programming",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "none"
+      },
+      "cell-1-2": {
+        "subject": "FPGA Architecture and Programming",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "none"
+      },
+      "cell-4-1": {
+        "subject": "FPGA Architecture and Programming",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "none"
+      },
+      "cell-2-3": {
+        "subject": "Design Project",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      },
+      "cell-2-4": {
+        "subject": "Design Project",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      },
+      "cell-3-3": {
+        "subject": "FPGA Architecture and Programming",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "Batch 1"
+      },
+      "cell-3-4": {
+        "subject": "FPGA Architecture and Programming",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "Batch 1"
+      },
+      "cell-1-6": {
+        "subject": "FPGA Architecture and Programming",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "Batch 2"
+      },
+      "cell-1-7": {
+        "subject": "FPGA Architecture and Programming",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "Batch 2"
+      },
+      "cell-3-5": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-3-6": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      },
+      "cell-4-5": {
+        "subject": "Design Project",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      },
+      "cell-4-6": {
+        "subject": "Design Project",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      }
+    },
+    "id": "sivanadam@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Counselling, Design Project, FPGA Architecture and Programming, Microcontrollers & Interfacing Lab",
+    "classHandling": "2nd Year - ECE-B, 2nd Year - VLSI, 3rd Year - ECE-A",
+    "phone": ""
+  },
+  "Karthikeyan@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.K.Karthikeyan",
+    "dept": "ECE",
+    "desig": "Associate Professor",
+    "timetable": {
+      "cell-0-1": {
+        "subject": "Integrated Optoelectronic Devices",
+        "time": "8:45-9:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-2": {
+        "subject": "Integrated Optoelectronic Devices",
+        "time": "9:45-10:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-4-1": {
+        "subject": "Integrated Optoelectronic Devices",
+        "time": "8:45-9:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-3": {
+        "subject": "Advanced PCB Design and Testing",
+        "time": "11:05-12:05",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-4": {
+        "subject": "Advanced PCB Design and Testing",
+        "time": "12:05-12:55",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-6": {
+        "subject": "Advanced PCB Design and Testing",
+        "time": "3:00-3:50",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-7": {
+        "subject": "Advanced PCB Design and Testing",
+        "time": "3:50-4:40",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-6": {
+        "subject": "Design Project",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-0-7": {
+        "subject": "Design Project",
+        "time": "3:50-4:40",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-1-1": {
+        "subject": "Design Project",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-1-2": {
+        "subject": "Design Project",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "Karthikeyan@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Advanced PCB Design and Testing, Counselling, Design Project, Integrated Optoelectronic Devices",
+    "classHandling": "3rd Year - ECE-C",
+    "phone": ""
+  },
+  "Vimalnath@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.S.Vimalnath",
+    "dept": "ECE",
+    "desig": "Associate Professor",
+    "timetable": {
+      "cell-2-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-2-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-0-1": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      },
+      "cell-0-2": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "none"
+      },
+      "cell-0-6": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-1-3": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-4-1": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-4-4": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-2-1": {
+        "subject": "Computer Architecture and Organization",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-0-4": {
+        "subject": "Computer Architecture and Organization",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-4-2": {
+        "subject": "Computer Architecture and Organization",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-2-3": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-2-4": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "Vimalnath@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Analog and Digital Communication Lab, Antenna & Millimetrewave Communication, Antenna & Millimetrewave Communication Lab, Computer Architecture and Organization, Counselling, Electronic Circuits Lab",
+    "classHandling": "1st Year - ECE-D, 2nd Year - ECE-C, 2nd Year - VLSI, 3rd Year - ECE-A",
+    "phone": ""
+  },
+  "mercy@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.D.Mercy",
+    "dept": "ECE",
+    "desig": "Associate Professor",
+    "timetable": {
+      "cell-0-6": {
+        "subject": "Design Project",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-0-7": {
+        "subject": "Design Project",
+        "time": "3:50-4:40",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-1-1": {
+        "subject": "Design Project",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-1-2": {
+        "subject": "Design Project",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-1-3": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-1-4": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-1-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-B",
+        "batch": "Batch 1"
+      },
+      "cell-1-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-B",
+        "batch": "Batch 1"
+      },
+      "cell-2-5": {
+        "subject": "Electronic Circuits",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-B"
+      },
+      "cell-2-7": {
+        "subject": "Electronic Circuits",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-B"
+      },
+      "cell-3-5": {
+        "subject": "Electronic Circuits",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-B"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      },
+      "cell-4-4": {
+        "subject": "Electronic Circuits",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "ECE-B"
+      },
+      "cell-4-5": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-C"
+      },
+      "cell-4-6": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-C"
+      }
+    },
+    "id": "mercy@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Counselling, Design Project, Digital Signal Processing Lab, Electronic Circuits, Electronic Circuits Lab, Microcontrollers & Interfacing Lab",
+    "classHandling": "1st Year - ECE-B, 2nd Year - ECE-A, 2nd Year - ECE-C, 3rd Year - ECE-C",
+    "phone": ""
+  },
+  "sakthi@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.P.Sakthi",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-5": {
+        "subject": "SoC & NoC Design",
+        "time": "1:45-2:45",
+        "year": "3",
+        "sections": [
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-C",
+        "isElective": true
+      },
+      "cell-1-3": {
+        "subject": "Microcontrollers & Interfacing",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-2-1": {
+        "subject": "Comprehension",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-2-2": {
+        "subject": "Comprehension",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-2-5": {
+        "subject": "Microcontrollers & Interfacing",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-3-1": {
+        "subject": "SoC & NoC Design",
+        "time": "8:45-9:45",
+        "year": "3",
+        "sections": [
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-C",
+        "isElective": true
+      },
+      "cell-3-3": {
+        "subject": "Microcontrollers & Interfacing",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      },
+      "cell-4-3": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-4-4": {
+        "subject": "Microcontrollers & Interfacing Lab",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      }
+    },
+    "id": "sakthi@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Comprehension, Counselling, Microcontrollers & Interfacing, Microcontrollers & Interfacing Lab, SoC & NoC Design",
+    "classHandling": "2nd Year - ECE-D, 3rd Year - ECE-A",
+    "phone": ""
+  },
+  "Ramakrishnam@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.P.Ramakrishnam",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-3": {
+        "subject": "Digital Signal Processing",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-2-5": {
+        "subject": "Digital Signal Processing",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-1-1": {
+        "subject": "Digital Signal Processing",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-4-3": {
+        "subject": "Digital Signal Processing",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-2-1": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-2-2": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-1-6": {
+        "subject": "Microcontrollers & Embedded System Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "Batch 1"
+      },
+      "cell-1-7": {
+        "subject": "Microcontrollers & Embedded System Lab",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "Batch 1"
+      },
+      "cell-4-4": {
+        "subject": "Electronic Circuits Lab",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "VLSI",
+        "batch": "Batch 1"
+      },
+      "cell-4-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "VLSI",
+        "batch": "Batch 1"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "Ramakrishnam@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Counselling, Digital Signal Processing, Digital Signal Processing Lab, Electronic Circuits Lab, Microcontrollers & Embedded System Lab",
+    "classHandling": "1st Year - VLSI, 2nd Year - ECE-A, 2nd Year - VLSI",
+    "phone": ""
+  },
+  "neeththiadithiya@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.B.Neeththi Aadithiya",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-3": {
+        "subject": "Electromagnetic Interference & Compatibility",
+        "time": "11:05-12:05",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-2": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-1-7": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-2-7": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-4-4": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      },
+      "cell-0-4": {
+        "subject": "Electromagnetic Interference & Compatibility",
+        "time": "12:05-12:55",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      }
+    },
+    "id": "neeththiadithiya@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Counselling, Electromagnetic Interference & Compatibility, Transmission Lines & Waveguide",
+    "classHandling": "2nd Year - ECE-B",
+    "phone": ""
+  },
+  "senthilkumar@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Dr.T.Senthilkumar",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-5": {
+        "subject": "Digital Signal Processing",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-0-7": {
+        "subject": "Electronic Circuits",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-D"
+      },
+      "cell-1-3": {
+        "subject": "Digital Signal Processing",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-1-5": {
+        "subject": "Digital Signal Processing",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-4-2": {
+        "subject": "Digital Signal Processing",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-4-4": {
+        "subject": "Electronic Circuits",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "ECE-D"
+      },
+      "cell-2-4": {
+        "subject": "Electronic Circuits",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "ECE-D"
+      },
+      "cell-2-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-D",
+        "batch": "Batch 1"
+      },
+      "cell-2-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-D",
+        "batch": "Batch 1"
+      },
+      "cell-3-3": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-3-4": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-4-5": {
+        "subject": "Comprehension",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "Batch 1"
+      },
+      "cell-4-6": {
+        "subject": "Comprehension",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "Batch 1"
+      }
+    },
+    "id": "senthilkumar@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Comprehension, Digital Signal Processing, Digital Signal Processing Lab, Electronic Circuits, Electronic Circuits Lab",
+    "classHandling": "1st Year - ECE-D, 2nd Year - ECE-B, 3rd Year - ECE-B",
+    "phone": ""
+  },
+  "kavitha@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Ms.S.Kavitha\t\t\t\t",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-3": {
+        "subject": "ASIC Design",
+        "time": "11:05-12:05",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-4": {
+        "subject": "ASIC Design",
+        "time": "12:05-12:55",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-0-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-1-4": {
+        "subject": "Digital Signal Processing",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-1-6": {
+        "subject": "ASIC Design",
+        "time": "3:00-3:50",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-7": {
+        "subject": "ASIC Design",
+        "time": "3:50-4:40",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-2-2": {
+        "subject": "Digital Signal Processing",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-2-4": {
+        "subject": "Digital Signal Processing",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-2-6": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "VLSI",
+        "batch": "none"
+      },
+      "cell-2-7": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-3-3": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-3-4": {
+        "subject": "Digital Signal Processing Lab",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-3-6": {
+        "subject": "Digital Signal Processing",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "kavitha@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "ASIC Design, Counselling, Digital Signal Processing, Digital Signal Processing Lab, Electronic Circuits Lab",
+    "classHandling": "1st Year - ECE-A, 2nd Year - ECE-B, 2nd Year - VLSI",
+    "phone": ""
+  },
+  "Arunkumar@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Mr.Arunkumar",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-2": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-1-4": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-2-1": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-4-2": {
+        "subject": "Antenna & Millimetrewave Communication",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-3-3": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-3-4": {
+        "subject": "Antenna & Millimetrewave Communication Lab",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-0-7": {
+        "subject": "Database Management System",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-3-1": {
+        "subject": "Database Management System",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-3-2": {
+        "subject": "Database Management System",
+        "time": "9:45-10:45",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-3-5": {
+        "subject": "Database Management System",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-3-6": {
+        "subject": "Database Management System",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-4-4": {
+        "subject": "Database Management System",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-2-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-D",
+        "batch": "none"
+      },
+      "cell-2-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-D",
+        "batch": "none"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "Arunkumar@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Antenna & Millimetrewave Communication, Antenna & Millimetrewave Communication Lab, Counselling, Database Management System, Electronic Circuits Lab",
+    "classHandling": "1st Year - ECE-D, 2nd Year - ECE-A, 3rd Year - ECE-C",
+    "phone": ""
+  },
+  "nivishna@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Mrs.S.Nivishna",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-3": {
+        "subject": "Advanced PCB Design and Testing",
+        "time": "11:05-12:05",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-4": {
+        "subject": "Advanced PCB Design and Testing",
+        "time": "12:05-12:55",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-6": {
+        "subject": "ASIC Design",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-1-1": {
+        "subject": "ASIC Design",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-2-5": {
+        "subject": "ASIC Design",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      },
+      "cell-3-5": {
+        "subject": "ASIC Design",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "VLSI"
+      }
+    },
+    "id": "nivishna@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "ASIC Design, Advanced PCB Design and Testing, Counselling",
+    "classHandling": "2nd Year - VLSI",
+    "phone": ""
+  },
+  "Pushpalatha@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Mrs.D.Pushpalatha",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-1": {
+        "subject": "Machine Learning",
+        "time": "8:45-9:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D",
+          "VLSI"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-2": {
+        "subject": "Machine Learning",
+        "time": "9:45-10:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D",
+          "VLSI"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-3": {
+        "subject": "Sensor Technology",
+        "time": "11:05-12:05",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-4": {
+        "subject": "Sensor Technology",
+        "time": "12:05-12:55",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-6": {
+        "subject": "Sensor Technology",
+        "time": "3:00-3:50",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-7": {
+        "subject": "Sensor Technology",
+        "time": "3:50-4:40",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-4-1": {
+        "subject": "Machine Learning",
+        "time": "8:45-9:45",
+        "year": "2",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D",
+          "VLSI"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-6": {
+        "subject": "Electronic Circuits",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-C"
+      },
+      "cell-2-6": {
+        "subject": "Electronic Circuits",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-C"
+      },
+      "cell-3-6": {
+        "subject": "Electronic Circuits",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-C"
+      },
+      "cell-4-5": {
+        "subject": "Electronic Circuits",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-C"
+      },
+      "cell-2-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-2-4": {
+        "subject": "Electronic Circuits Lab",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "Pushpalatha@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Counselling, Electronic Circuits, Electronic Circuits Lab, Machine Learning, Sensor Technology",
+    "classHandling": "1st Year - ECE-C",
+    "phone": ""
+  },
+  "Rakhasudha@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Mrs.P.Rakha Sudha",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-3": {
+        "subject": "Sensor Technology",
+        "time": "11:05-12:05",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-4": {
+        "subject": "Sensor Technology",
+        "time": "12:05-12:55",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-0-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-1-6": {
+        "subject": "Sensor Technology",
+        "time": "3:00-3:50",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-7": {
+        "subject": "Sensor Technology",
+        "time": "3:50-4:40",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-2-4": {
+        "subject": "Electronic Circuits Lab",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-2-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-2-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-2-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-3-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-E",
+        "batch": "Batch 2"
+      },
+      "cell-3-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-E",
+        "batch": "Batch 2"
+      },
+      "cell-4-4": {
+        "subject": "Electronic Circuits Lab",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "VLSI",
+        "batch": "Batch 2"
+      },
+      "cell-4-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "VLSI",
+        "batch": "Batch 2"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "Rakhasudha@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Counselling, Electronic Circuits Lab, Sensor Technology",
+    "classHandling": "1st Year - ECE-A, 1st Year - ECE-C, 1st Year - ECE-D, 1st Year - ECE-E, 1st Year - VLSI",
+    "phone": ""
+  },
+  "Kiruthika@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Mrs.T.Kiruthika",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-2": {
+        "subject": "Renewable Energy Source",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-2-1": {
+        "subject": "Renewable Energy Source",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-0-7": {
+        "subject": "Renewable Energy Source",
+        "time": "3:50-4:40",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-4-1": {
+        "subject": "Renewable Energy Source",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-B"
+      },
+      "cell-1-5": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-1-7": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-2-7": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-2-3": {
+        "subject": "Transmission Lines & Waveguide",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-0-6": {
+        "subject": "Library",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-A"
+      },
+      "cell-4-5": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-4-6": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-4-3": {
+        "subject": "Microwave & Optical Communication Lab",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-4-4": {
+        "subject": "Microwave & Optical Communication Lab",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "Kiruthika@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Analog and Digital Communication Lab, Counselling, Library, Microwave & Optical Communication Lab, Renewable Energy Source, Transmission Lines & Waveguide",
+    "classHandling": "2nd Year - ECE-A, 3rd Year - ECE-B, 3rd Year - ECE-C",
+    "phone": ""
+  },
+  "sundarapandian@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Mr.B.Sundara pandian",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-3": {
+        "subject": "Analog and Digital Communication",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-1-4": {
+        "subject": "Analog and Digital Communication",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-4-6": {
+        "subject": "Analog and Digital Communication",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-0-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-0-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-A",
+        "batch": "Batch 2"
+      },
+      "cell-1-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-1-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-2-4": {
+        "subject": "Electronic Circuits Lab",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-2-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-C",
+        "batch": "Batch 2"
+      },
+      "cell-3-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-E",
+        "batch": "Batch 2"
+      },
+      "cell-3-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-E",
+        "batch": "Batch 2"
+      },
+      "cell-2-6": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-D",
+        "batch": "Batch 1"
+      },
+      "cell-2-7": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-D",
+        "batch": "Batch 1"
+      },
+      "cell-2-3": {
+        "subject": "Library",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-D"
+      },
+      "cell-4-3": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-4-4": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-D",
+        "batch": "Batch 2"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "sundarapandian@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Analog and Digital Communication, Analog and Digital Communication Lab, Counselling, Electronic Circuits Lab, Library",
+    "classHandling": "1st Year - ECE-A, 1st Year - ECE-B, 1st Year - ECE-C, 1st Year - ECE-E, 2nd Year - ECE-D",
+    "phone": ""
+  },
+  "sharmila@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Mrs.E.Sharmila",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-3": {
+        "subject": "Advanced PCB Design and Testing",
+        "time": "11:05-12:05",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-4": {
+        "subject": "Advanced PCB Design and Testing",
+        "time": "12:05-12:55",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-6": {
+        "subject": "Renewable Energy Source",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-1-1": {
+        "subject": "Design Project",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-1-2": {
+        "subject": "Design Project",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-C",
+        "batch": "none"
+      },
+      "cell-1-5": {
+        "subject": "Renewable Energy Source",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-1-6": {
+        "subject": "Advanced PCB Design and Testing",
+        "time": "3:00-3:50",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-7": {
+        "subject": "Advanced PCB Design and Testing",
+        "time": "3:50-4:40",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-2-4": {
+        "subject": "Electronic Circuits Lab",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-2-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-2-7": {
+        "subject": "Renewable Energy Source",
+        "time": "3:50-4:40",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      },
+      "cell-3-5": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-B",
+        "batch": "Batch 1"
+      },
+      "cell-3-6": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "3:00-3:50",
+        "year": "2",
+        "section": "ECE-B",
+        "batch": "Batch 1"
+      },
+      "cell-4-2": {
+        "subject": "Renewable Energy Source",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-A"
+      },
+      "cell-4-4": {
+        "subject": "Electronic Circuits Lab",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "VLSI",
+        "batch": "Batch 1"
+      },
+      "cell-4-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "VLSI",
+        "batch": "Batch 1"
+      }
+    },
+    "id": "sharmila@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Advanced PCB Design and Testing, Analog and Digital Communication Lab, Counselling, Design Project, Electronic Circuits Lab, Renewable Energy Source",
+    "classHandling": "1st Year - ECE-C, 1st Year - VLSI, 2nd Year - ECE-B, 3rd Year - ECE-A, 3rd Year - ECE-C",
+    "phone": ""
+  },
+  "Indhuja@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Ms.B.Indhuja",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-3": {
+        "subject": "Electromagnetic Interference & Compatibility",
+        "time": "11:05-12:05",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-4": {
+        "subject": "Electromagnetic Interference & Compatibility",
+        "time": "12:05-12:55",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-0-6": {
+        "subject": "Python",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-B"
+      },
+      "cell-0-7": {
+        "subject": "Python",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-B"
+      },
+      "cell-2-4": {
+        "subject": "Python",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "VLSI"
+      },
+      "cell-2-5": {
+        "subject": "Python",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "VLSI"
+      },
+      "cell-2-6": {
+        "subject": "Python",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-A"
+      },
+      "cell-2-7": {
+        "subject": "Python",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-A"
+      },
+      "cell-3-5": {
+        "subject": "Python",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-D"
+      },
+      "cell-3-6": {
+        "subject": "Python",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-D"
+      },
+      "cell-4-3": {
+        "subject": "Python",
+        "time": "11:05-12:05",
+        "year": "1",
+        "section": "ECE-E"
+      },
+      "cell-4-4": {
+        "subject": "Python",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "ECE-E"
+      },
+      "cell-4-5": {
+        "subject": "Library",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "VLSI"
+      },
+      "cell-4-6": {
+        "subject": "Library",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-D"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      },
+      "cell-1-6": {
+        "subject": "Electromagnetic Interference & Compatibility",
+        "time": "3:00-3:50",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-7": {
+        "subject": "Electromagnetic Interference & Compatibility",
+        "time": "3:50-4:40",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      }
+    },
+    "id": "Indhuja@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Counselling, Electromagnetic Interference & Compatibility, Library, Python",
+    "classHandling": "1st Year - ECE-A, 1st Year - ECE-B, 1st Year - ECE-D, 1st Year - ECE-E, 1st Year - VLSI, 2nd Year - VLSI, 3rd Year - ECE-D",
+    "phone": ""
+  },
+  "arul@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Mr.A.Arul",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-1": {
+        "subject": "Renewable Energy Source",
+        "time": "8:45-9:45",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-4-5": {
+        "subject": "Renewable Energy Source",
+        "time": "1:45-2:45",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-0-3": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-0-4": {
+        "subject": "Analog and Digital Communication Lab",
+        "time": "12:05-12:55",
+        "year": "2",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-1-1": {
+        "subject": "Analog and Digital Communication",
+        "time": "8:45-9:45",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-1-3": {
+        "subject": "Design Project",
+        "time": "11:05-12:05",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "none"
+      },
+      "cell-1-4": {
+        "subject": "Design Project",
+        "time": "12:05-12:55",
+        "year": "3",
+        "section": "ECE-D",
+        "batch": "none"
+      },
+      "cell-2-6": {
+        "subject": "Design Project",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "none"
+      },
+      "cell-2-7": {
+        "subject": "Design Project",
+        "time": "3:50-4:40",
+        "year": "3",
+        "section": "ECE-B",
+        "batch": "none"
+      },
+      "cell-4-3": {
+        "subject": "Analog and Digital Communication",
+        "time": "11:05-12:05",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-3-2": {
+        "subject": "Renewable Energy Source",
+        "time": "9:45-10:45",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-1-6": {
+        "subject": "ASIC Design",
+        "time": "3:00-3:50",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-1-7": {
+        "subject": "ASIC Design",
+        "time": "3:50-4:40",
+        "year": "3",
+        "sections": [
+          "ECE-A",
+          "ECE-B",
+          "ECE-C",
+          "ECE-D"
+        ],
+        "section": "ECE-A",
+        "isElective": true
+      },
+      "cell-2-5": {
+        "subject": "Library",
+        "time": "1:45-2:45",
+        "year": "2",
+        "section": "ECE-B"
+      },
+      "cell-3-6": {
+        "subject": "Renewable Energy Source",
+        "time": "3:00-3:50",
+        "year": "3",
+        "section": "ECE-C"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      },
+      "cell-4-7": {
+        "subject": "Analog and Digital Communication",
+        "time": "3:50-4:40",
+        "year": "2",
+        "section": "ECE-B"
+      }
+    },
+    "id": "arul@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "ASIC Design, Analog and Digital Communication, Analog and Digital Communication Lab, Counselling, Design Project, Library, Renewable Energy Source",
+    "classHandling": "2nd Year - ECE-B, 3rd Year - ECE-B, 3rd Year - ECE-C, 3rd Year - ECE-D",
+    "phone": ""
+  },
+  "vaidhgegi@mkce.ac.in": {
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "name": "Mrs.Vaidhegi",
+    "dept": "ECE",
+    "desig": "Assistant Professor",
+    "timetable": {
+      "cell-0-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-A",
+        "batch": "Batch 1"
+      },
+      "cell-0-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-A",
+        "batch": "Batch 1"
+      },
+      "cell-1-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-1-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-B",
+        "batch": "Batch 2"
+      },
+      "cell-2-4": {
+        "subject": "Electronic Circuits Lab",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-2-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-C",
+        "batch": "Batch 1"
+      },
+      "cell-2-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-D",
+        "batch": "Batch 1"
+      },
+      "cell-2-7": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:50-4:40",
+        "year": "1",
+        "section": "ECE-D",
+        "batch": "Batch 1"
+      },
+      "cell-3-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "ECE-E",
+        "batch": "Batch 1"
+      },
+      "cell-3-6": {
+        "subject": "Electronic Circuits Lab",
+        "time": "3:00-3:50",
+        "year": "1",
+        "section": "ECE-E",
+        "batch": "Batch 1"
+      },
+      "cell-4-4": {
+        "subject": "Electronic Circuits Lab",
+        "time": "12:05-12:55",
+        "year": "1",
+        "section": "VLSI",
+        "batch": "Batch 1"
+      },
+      "cell-4-5": {
+        "subject": "Electronic Circuits Lab",
+        "time": "1:45-2:45",
+        "year": "1",
+        "section": "VLSI",
+        "batch": "Batch 1"
+      },
+      "cell-3-7": {
+        "subject": "Counselling",
+        "time": "3:50-4:40",
+        "year": "",
+        "section": "",
+        "isCounselling": true
+      }
+    },
+    "id": "vaidhgegi@mkce.ac.in",
+    "photo": null,
+    "subjectHandling": "Counselling, Electronic Circuits Lab",
+    "classHandling": "1st Year - ECE-A, 1st Year - ECE-B, 1st Year - ECE-C, 1st Year - ECE-D, 1st Year - ECE-E, 1st Year - VLSI",
+    "phone": ""
+  }
+}
