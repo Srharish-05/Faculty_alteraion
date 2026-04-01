@@ -43,6 +43,90 @@
 }
 
 /* ============================================
+   PROFESSIONAL ALIGNMENT & TEXT RENDERING
+   ============================================ */
+
+/* Ensure all major sections are properly centered */
+.main-content,
+.container,
+.page-container {
+    margin: 0 auto;
+    max-width: 1320px;
+    padding: 0 1.5rem;
+}
+
+/* Dashboard page header alignment */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.page-header h1,
+.page-header h2 {
+    white-space: normal;
+    overflow-wrap: break-word;
+    line-height: 1.3;
+}
+
+/* Ensure buttons are properly centered */
+.btn,
+button {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Notification and card text alignment */
+.notif-body,
+.card-content,
+.alert-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Ensure text in notification titles doesn't break awkwardly */
+.notif-title,
+.notif-desc,
+.card-title {
+    display: block;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Directory grid professional alignment */
+.directory-grid,
+.faculty-grid,
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Form group alignment */
+.form-group,
+.form-row {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* ============================================
    MOBILE RESPONSIVE DESIGN
    Media Queries for Tablet (768px) & Mobile (<768px)
    ============================================ */
@@ -385,9 +469,7 @@
         margin-bottom: 1rem;
         width: 100%;
         max-width: 100%;
-        overflow-x: hidden;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
+        overflow: hidden;
     }
 
     .card * {
@@ -417,7 +499,6 @@
     .modal-content * {
         max-width: 100%;
         word-wrap: break-word;
-        overflow-wrap: break-word;
     }
 
     .modal-content h2 {
@@ -457,17 +538,22 @@
         max-width: 100%;
     }
 
-    /* Long text wrapping */
+    /* Long text wrapping - use word-wrap for better text breaking */
     h1, h2, h3, h4, h5, h6 {
-        word-break: break-word;
-        overflow-wrap: break-word;
+        word-wrap: break-word;
         line-height: 1.3;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
-    /* List and text content */
-    li, p, span, div {
-        word-break: break-word;
-        overflow-wrap: break-word;
+    /* List and text content - normal wrapping */
+    li, p, span {
+        word-wrap: break-word;
+    }
+
+    div {
+        max-width: 100%;
+        overflow: hidden;
     }
 
     /* Ensure tables are scrollable without breaking layout */
@@ -520,7 +606,10 @@
     .notification-content,
     .alert-content {
         max-width: 100%;
-        word-break: break-word;
+        word-wrap: break-word;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     /* Timeline events responsive */
@@ -544,8 +633,11 @@
     .faculty-card-title,
     .faculty-card-subtitle {
         white-space: normal;
-        word-break: break-word;
-        overflow-wrap: break-word;
+        word-wrap: break-word;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     /* Ensure pagination and controls fit */
@@ -578,7 +670,7 @@
 
     .search-results-dropdown * {
         max-width: 100%;
-        overflow-wrap: break-word;
+        word-wrap: break-word;
     }
 
     .search-result-item {
@@ -605,7 +697,7 @@
     }
 
     .schedule-block * {
-        word-break: break-word;
+        word-wrap: break-word;
     }
 
     .schedule-info h4 {
@@ -1041,9 +1133,9 @@ table td:first-child {
 }
 
 /* Prevent long text from overflowing */
-p, span, div, a {
+p, span, a {
     overflow-wrap: break-word;
-    word-break: break-word;
+    word-wrap: break-word;
 }
 
 /* Prevent image overflow */
