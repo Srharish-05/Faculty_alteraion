@@ -73,6 +73,12 @@
             padding: 30px;
         }
 
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
         .tab-panel {
             display: none;
         }
@@ -229,6 +235,7 @@
             max-height: 90vh;
             overflow-y: auto;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            position: relative;
         }
 
         .modal-header {
@@ -462,6 +469,7 @@
                     <input type="text" id="facultySearch" placeholder="Search by name or email..." onkeyup="filterFacultyTable()">
                 </div>
                 <div id="facultyLoading" class="spinner" style="display:none;"></div>
+                <div class="table-responsive">
                 <table id="facultyTable">
                     <thead>
                         <tr>
@@ -477,6 +485,7 @@
                         <tr><td colspan="6" class="no-data">Loading faculty data...</td></tr>
                     </tbody>
                 </table>
+                </div>
             </div>
 
             <!-- Curriculum Tab -->
@@ -500,6 +509,7 @@
                     <button class="btn-primary" onclick="openAddNotificationModal()">+ Send Notification</button>
                 </div>
                 <div id="notificationsLoading" class="spinner" style="display:none;"></div>
+                <div class="table-responsive">
                 <table id="notificationsTable">
                     <thead>
                         <tr>
@@ -514,6 +524,7 @@
                         <tr><td colspan="5" class="no-data">Loading notifications...</td></tr>
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

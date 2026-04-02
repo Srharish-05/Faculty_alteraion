@@ -42,6 +42,20 @@
     --nav-height: 64px;
 }
 
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    min-width: 0;
+}
+
 /* ============================================
    PROFESSIONAL ALIGNMENT & TEXT RENDERING
    ============================================ */
@@ -53,6 +67,7 @@
     margin: 0 auto;
     max-width: 1320px;
     padding: 0 1.5rem;
+    min-width: 0;
 }
 
 /* Dashboard page header alignment */
@@ -118,6 +133,21 @@ button {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+.main-content > *,
+.container > *,
+.page-container > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    height: auto;
 }
 
 .form-row {
@@ -373,6 +403,30 @@ button {
         gap: 0.5rem;
     }
 
+    .directory-grid,
+    .faculty-grid,
+    .card-grid,
+    .stat-card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .search-box,
+    .filter-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box input,
+    .filter-group > * {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .page-header {
+        align-items: flex-start;
+    }
+
     .page-header h1 {
         font-size: 1.125rem !important;
         margin-bottom: 0 !important;
@@ -498,6 +552,7 @@ button {
         overflow-y: auto;
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
+        position: relative;
     }
 
     .modal-content * {
@@ -854,6 +909,12 @@ button {
     .main-content,
     .container {
         padding: calc(3.5rem + 0.75rem) 0.75rem 1rem;
+    }
+
+    .card,
+    .glass-card,
+    .stat-card {
+        padding: 1rem;
     }
 
     .page-header h1 {

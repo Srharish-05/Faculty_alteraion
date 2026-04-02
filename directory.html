@@ -213,6 +213,52 @@
                 padding: calc(4rem + 1rem) 1rem 1.5rem !important;
             }
 
+            .search-box-container {
+                margin-bottom: 1.5rem !important;
+            }
+
+            .search-box {
+                flex-direction: column;
+                align-items: stretch !important;
+            }
+
+            .search-box button {
+                width: 100%;
+            }
+
+            .directory-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            #filterPanel > div {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+
+            #filterPanel > div > div:first-child {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            #filterPanel > div > div:first-child > div {
+                width: 100%;
+            }
+
+            #filterPanel select {
+                width: 100% !important;
+                max-width: 100%;
+            }
+
+            #filterPanel button {
+                width: 100%;
+                justify-content: center;
+            }
+
             /* 16px prevents mobile auto-zoom on input focus */
             input[type="text"],
             input[type="email"],
@@ -260,6 +306,23 @@
         @media (max-width: 480px) {
             main {
                 padding: calc(3.5rem + 0.5rem) 0.75rem 1rem !important;
+            }
+
+            .search-box-container {
+                margin-bottom: 1.25rem !important;
+            }
+
+            .search-box {
+                padding: 0.45rem 0.6rem !important;
+                gap: 0.6rem !important;
+            }
+
+            #filterPanel {
+                padding: 1rem !important;
+            }
+
+            #filterPanel > div > div:first-child {
+                gap: 0.75rem;
             }
 
             .directory-header h1 {

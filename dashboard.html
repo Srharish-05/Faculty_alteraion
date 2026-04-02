@@ -459,6 +459,15 @@
                 padding: calc(3.5rem + 1rem) 1rem 1.5rem !important;
             }
 
+            .dashboard-layout {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            .dashboard-mini-stats {
+                grid-template-columns: 1fr !important;
+            }
+
             /* 16px prevents mobile auto-zoom on input focus */
             input[type="text"],
             input[type="email"],
@@ -509,6 +518,14 @@
         @media (max-width: 480px) {
             .main-content {
                 padding: calc(3.5rem + 0.5rem) 0.75rem 1rem !important;
+            }
+
+            .dashboard-layout {
+                gap: 0.75rem !important;
+            }
+
+            .dashboard-mini-stats {
+                gap: 0.75rem !important;
             }
 
             .page-header h1 {
@@ -648,7 +665,7 @@
             </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 340px; gap: 2rem; align-items: start;">
+        <div class="dashboard-layout" style="display: grid; grid-template-columns: 1fr 340px; gap: 2rem; align-items: start;">
             <div style="display: flex; flex-direction: column; gap: 2rem;">
                 <section class="card reveal delay-2" style="padding: 1.5rem;">
                     <h3 style="font-size: 0.8125rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem;">
@@ -666,7 +683,7 @@
                         <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Monthly
                             Trend</span>
                     </div>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; text-align: center;">
+                    <div class="dashboard-mini-stats" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; text-align: center;">
                         <div style="padding: 1rem; background: var(--bg-main); border-radius: var(--radius-sm);">
                             <div id="stat-taken-by-me"
                                 style="font-size: 1.25rem; font-weight: 700; color: var(--primary-main);">00</div>

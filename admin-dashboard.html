@@ -134,11 +134,67 @@
             opacity: 1;
         }
 
+        .two-column-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+        }
+
         /* ========== ADMIN DASHBOARD MOBILE RESPONSIVE ========== */
         @media (max-width: 768px) {
             .container {
                 padding: calc(3.5rem + 1rem) 1rem 1.5rem !important;
                 max-width: 100% !important;
+            }
+
+            .admin-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .two-column-layout {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .report-section {
+                padding: 1.25rem;
+            }
+
+            .filter-group {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.875rem;
+            }
+
+            .filter-group .form-group,
+            .filter-group .date-input,
+            .filter-group .btn {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .report-stat-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .report-preview > div:first-child {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .report-preview > div:last-child {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+                text-align: left;
+            }
+
+            .report-preview .btn {
+                width: 100%;
+                margin-left: 0 !important;
             }
 
             /* 16px prevents mobile auto-zoom on input focus */
@@ -187,6 +243,18 @@
         @media (max-width: 480px) {
             .container {
                 padding: calc(3.5rem + 0.5rem) 0.75rem 1rem !important;
+            }
+
+            .admin-grid {
+                gap: 0.75rem;
+            }
+
+            .report-stat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .report-section {
+                padding: 1rem;
             }
 
             h1 {
@@ -368,7 +436,7 @@
         <section class="report-section reveal delay-5">
             <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 1.5rem;">Manage
                 Year-wise Sections</h3>
-            <div style="display: grid; grid-template-columns: 240px 1fr; gap: 2.5rem;">
+            <div class="two-column-layout">
                 <div>
                     <label class="form-label">Select Year</label>
                     <select id="section-year-select" class="form-input" onchange="loadSectionsForYear(this.value)">
@@ -410,7 +478,7 @@
         <section class="report-section reveal delay-6" style="margin-top: 2rem;">
             <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 1.5rem;">Manage
                 Curriculum</h3>
-            <div style="display: grid; grid-template-columns: 240px 1fr; gap: 2.5rem;">
+            <div class="two-column-layout">
                 <div>
                     <label class="form-label">Select Year</label>
                     <select id="curriculum-year-select" class="form-input"
