@@ -619,7 +619,6 @@ svg {
 
     div {
         max-width: 100%;
-        overflow: hidden;
     }
 
     /* Ensure tables are scrollable without breaking layout */
@@ -721,7 +720,6 @@ svg {
     /* Responsive grid fallback */
     [class*="grid"],
     [class*="flex"] {
-        width: 100% !important;
         max-width: 100%;
     }
 
@@ -1239,6 +1237,12 @@ select,
 textarea {
     max-width: 100%;
     width: 100%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    max-width: none;
 }
 
 /* Form Layout Alignment */

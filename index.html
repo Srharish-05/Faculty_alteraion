@@ -316,6 +316,12 @@
             color: #94a3b8;
             font-size: 1rem;
             transition: color 0.2s;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        #loginForm {
+            gap: 1rem;
         }
 
         .form-control {
@@ -353,6 +359,25 @@
             cursor: pointer;
             transition: all 0.2s;
             margin-top: 0.5rem;
+        }
+
+        .remember-row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.5rem;
+            margin: 0.5rem 0 1rem;
+        }
+
+        .remember-row input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+            flex: 0 0 auto;
+        }
+
+        .remember-row label {
+            margin: 0;
+            white-space: nowrap;
         }
 
         .btn-login:hover {
@@ -665,9 +690,9 @@
             }
 
             /* 16px prevents mobile browsers from auto zooming on input focus */
-            .form-control {
+            .input-box .form-control {
                 font-size: 16px;
-                padding: 0.875rem 0.875rem 0.875rem 2.8rem;
+                padding: 0.875rem 0.875rem 0.875rem 2.8rem !important;
             }
 
             .input-box i {
@@ -677,6 +702,10 @@
             .btn-login {
                 font-size: 0.95rem;
                 padding: 0.875rem;
+            }
+
+            .remember-row {
+                margin: 0.35rem 0 0.75rem;
             }
 
             .system-status {
@@ -729,12 +758,18 @@
                 font-size: 0.68rem;
             }
 
-            .form-control {
+            .input-box .form-control {
                 border-radius: 0.65rem;
+                padding: 0.8rem 0.75rem 0.8rem 2.65rem !important;
             }
 
             .btn-login {
                 border-radius: 0.65rem;
+            }
+
+            .remember-row {
+                margin: 0.25rem 0 0.6rem;
+                gap: 0.4rem;
             }
 
             .loader-visual-wrapper {
@@ -840,7 +875,7 @@
                         </div>
                     </div>
 
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin: 1.5rem 0 2rem;">
+                    <div class="remember-row">
                         <input type="checkbox" id="rememberMe" style="accent-color: #0f172a; cursor: pointer;">
                         <label for="rememberMe"
                             style="font-size: 0.85rem; color: #64748b; cursor: pointer; font-weight: 500; white-space: nowrap;">Stay logged in</label>
