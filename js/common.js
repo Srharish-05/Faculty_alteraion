@@ -85,7 +85,32 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // 6. Page Transition: Entry
+    // 7. Mobile Navigation Toggle
+    const mobileToggle = document.getElementById('mobileNavToggle');
+    const nav = document.querySelector('.navbar');
+    if (mobileToggle && nav) {
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nav.classList.toggle('mobile-nav-open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (nav.classList.contains('mobile-nav-open') && !nav.contains(e.target)) {
+                nav.classList.remove('mobile-nav-open');
+            }
+        });
+
+        // Close menu when clicking links
+        const navLinks = nav.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('mobile-nav-open');
+            });
+        });
+    }
+
+    // 8. Page Transition: Entry
     try {
         setTimeout(() => {
             document.body.classList.add('page-loaded');
@@ -95,7 +120,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.body.style.transform = 'none';
     }
 
-    // 7. Page Transition: Exit
+    // 9. Page Transition: Exit
     document.addEventListener('click', (e) => {
         const link = e.target.closest('a');
         if (!link) return;
@@ -105,6 +130,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Orchestrate transition for internal portal links
         if (href && !href.startsWith('http') && !href.startsWith('#') && target !== '_blank' && !e.ctrlKey && !e.metaKey) {
+            // Don't trigger transition if it's just a logout or specifically marked as no-transition
+            if (href === '#' || link.onclick) return;
+
             e.preventDefault();
             document.body.classList.add('page-leaving');
 
