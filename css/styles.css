@@ -304,7 +304,7 @@ svg {
     }
 
     .nav-institutional-logo {
-        height: 32px;
+        height: 28px;
         width: auto;
     }
 
@@ -361,9 +361,11 @@ svg {
     }
 
     .navbar-right {
+        display: flex !important;
         flex: 0 0 auto;
-        gap: 0.75rem;
-        order: 2;
+        gap: 0.5rem;
+        align-items: center;
+        margin-left: auto;
     }
 
     /* Hide nav links on mobile by default */
@@ -372,44 +374,47 @@ svg {
     }
 
     .nav-notif-link {
-        width: 36px;
-        height: 36px;
-        font-size: 1.1rem;
-        margin: 0 0.5rem;
-    }
-
-    .nav-year-tag {
-        display: none;
-    }
-
-    .profile-pill {
-        padding: 0.25rem 0.25rem;
-        height: 40px;
-        gap: 0.5rem;
-    }
-
-    .profile-info {
-        display: none;
-    }
-
-    .profile-avatar {
-        width: 36px;
-        height: 36px;
-        font-size: 0.75rem;
-    }
-
-    /* Mobile Menu Button */
-    .mobile-nav-toggle {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+        margin: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 36px;
-        height: 36px;
-        background: #fff;
+    }
+
+    .nav-year-tag {
+        display: none !important;
+    }
+
+    .profile-pill {
+        padding: 0;
+        height: 32px;
+        background: transparent;
+        border: none;
+    }
+
+    .profile-info {
+        display: none !important;
+    }
+
+    .profile-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 0.7rem;
+    }
+
+    .mobile-nav-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: white;
         border: 1px solid #e4e7ec;
         border-radius: 8px;
         color: var(--text-main);
-        font-size: 1.1rem;
+        font-size: 1rem;
         cursor: pointer;
         padding: 0;
         transition: all 0.2s;
