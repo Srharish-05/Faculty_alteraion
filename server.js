@@ -262,6 +262,11 @@ function validateTimetable(timetable) {
     return true;
 }
 
+function isStrongPassword(password) {
+    if (typeof password !== 'string') return false;
+    return /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/.test(password);
+}
+
 // Normalize curriculum subjects format
 function normalizeCurriculum(curriculum) {
     if (!Array.isArray(curriculum)) return [];
@@ -416,6 +421,12 @@ app.post('/api/change-password', async (req, res) => {
 
         if (!id || !oldPassword || !newPassword) {
             return res.status(400).json({ error: 'Required fields missing' });
+        }
+
+        if (!isStrongPassword(newPassword)) {
+            return res.status(400).json({
+                error: 'New password must be at least 8 characters and include 1 uppercase letter, 1 number, and 1 special character'
+            });
         }
 
         const profile = await getProfileData(id);

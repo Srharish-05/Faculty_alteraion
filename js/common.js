@@ -332,6 +332,8 @@ function showToast(message, type = 'info') {
 // Override native alert for consistency
 window.alert = (msg) => showToast(msg, 'info');
 
+const STRONG_PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+
 // ============================================
 // Change Password Modal
 // ============================================
@@ -354,11 +356,14 @@ function injectChangePasswordModal() {
                 </div>
                 <div class="form-group" style="margin-bottom: 1.25rem;">
                     <label class="form-label">New Password</label>
-                    <input type="password" id="cpNewPass" class="form-input" required placeholder="Enter new password" minlength="6">
+                    <input type="password" id="cpNewPass" class="form-input" required placeholder="Enter new password" minlength="8">
+                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.35rem;">
+                        Use at least 8 characters, including 1 uppercase letter, 1 number, and 1 special character.
+                    </div>
                 </div>
                 <div class="form-group" style="margin-bottom: 2rem;">
                     <label class="form-label">Confirm New Password</label>
-                    <input type="password" id="cpConfirmPass" class="form-input" required placeholder="Confirm new password" minlength="6">
+                    <input type="password" id="cpConfirmPass" class="form-input" required placeholder="Confirm new password" minlength="8">
                 </div>
                 <div id="cpError" style="color: var(--danger); font-size: 0.8125rem; margin-bottom: 1rem; display: none;"></div>
                 <div style="display: flex; gap: 1rem;">
@@ -402,8 +407,8 @@ async function handleChangePassword(e) {
         return;
     }
 
-    if (newPass.length < 6) {
-        errorEl.textContent = 'Password must be at least 6 characters.';
+    if (!STRONG_PASSWORD_REGEX.test(newPass)) {
+        errorEl.textContent = 'Password must be at least 8 characters and include 1 uppercase letter, 1 number, and 1 special character.';
         errorEl.style.display = 'block';
         return;
     }
