@@ -29,7 +29,7 @@
         /* 2. Navbar — clean floating pill */
         /* 3. Main content */
         .main-content {
-            max-width: 1200px !important;
+            max-width: clamp(320px, 95vw, 1200px) !important;
         }
 
         /* 4. Page header */
@@ -58,7 +58,7 @@
         /* 5. Stat cards — white, clean, left accent bar */
         .stat-card-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.25rem;
             margin-bottom: 2rem;
         }
@@ -567,7 +567,7 @@
             </div>
         </div>
 
-        <div class="dashboard-layout" style="display: grid; grid-template-columns: 1fr 340px; gap: 2rem; align-items: start;">
+        <div class="dashboard-layout" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start;">
             <div style="display: flex; flex-direction: column; gap: 2rem;">
                 <section class="card reveal delay-2" style="padding: 1.5rem;">
                     <h3 style="font-size: 0.8125rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem;">

@@ -21,16 +21,16 @@
         /* ── Summary Stat Cards ── */
         .summary-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: clamp(1rem, 3vw, 1.25rem);
+            margin-bottom: clamp(1.5rem, 5vw, 2rem);
         }
 
         .summary-card {
             background: #fff;
             border: 1px solid #d0d5dd;
             border-radius: 10px;
-            padding: 1.25rem 1.5rem;
+            padding: clamp(1rem, 4vw, 1.25rem) clamp(1.25rem, 4vw, 1.5rem);
             display: flex;
             align-items: center;
             gap: 1rem;
@@ -481,20 +481,28 @@
                         style="color: #004a89; margin-right: 0.5rem; font-size: 0.875rem;"></i>Request Log</h3>
                 <span class="record-count" id="record-count">0 records</span>
             </div>
-            <table class="history-table">
-                <thead>
-                    <tr>
-                        <th>Request Time</th>
-                        <th>Period &amp; Subject</th>
-                        <th>Substituted By</th>
-                        <th>Status</th>
-                        <th>Response Time</th>
-                    </tr>
-                </thead>
-                <tbody id="historyBody">
-                    <!-- Data will be loaded dynamically -->
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Request Time</th>
+                            <th>Period &amp; Subject</th>
+                            <th>Substituted By</th>
+                            <th>Status</th>
+                            <th>Response Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody">
+                        <!-- Data will be loaded dynamically -->
+                        <tr>
+                            <td colspan="5" class="empty-history" style="text-align: center; padding: 3rem;">
+                                <i class="fas fa-history" style="font-size: 2rem; color: #cbd5e1; margin-bottom: 1rem;"></i>
+                                <p>No history found</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 

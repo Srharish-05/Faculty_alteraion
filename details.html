@@ -807,6 +807,37 @@
                 height: 80px;
             }
         }
+
+        @media (max-width: 780px) {
+
+            .tt-header,
+            .day-label,
+            .tt-break,
+            .period-cell {
+                height: 90px !important;
+                font-size: 0.7rem !important;
+            }
+
+            .grid-container {
+                min-width: 900px !important;
+                display: grid !important;
+                grid-template-columns: repeat(11, 1fr) !important;
+            }
+
+            /* Sticky Column Logic for Mobile */
+            .day-label {
+                position: sticky !important;
+                left: 0 !important;
+                z-index: 5 !important;
+                background: #f8fafc !important;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.08) !important;
+            }
+
+            /* Ensure header of Day stays above other sticky days */
+            #timetable-body>.day-label:first-child {
+                z-index: 10 !important;
+            }
+        }
     </style>
 </head>
 
@@ -848,7 +879,7 @@
         </div>
     </nav>
 
-    <main class="container" style="padding-top: 6.5rem;">
+    <main class="container" style="padding-top: clamp(4.5rem, 10vh, 7.5rem);">
         <div style="margin-bottom: 1.5rem;">
             <h1 style="font-size: 1.5rem; font-weight: 600; color: #0f172a; margin-bottom: 0.15rem;">Profile</h1>
             <p style="color: #64748b; font-size: 0.8125rem;">Manage your personal information and weekly schedule.</p>
@@ -860,9 +891,10 @@
                     style="font-size: 0.8125rem; font-weight: 700; color: #475569; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.6rem;">
                     Personal Details
                 </h3>
-                <div style="display: flex; gap: 2.5rem; align-items: flex-start; flex-wrap: wrap;">
+                <div
+                    style="display: flex; gap: clamp(1rem, 5vw, 2.5rem); align-items: flex-start; flex-wrap: wrap; justify-content: center;">
                     <!-- Photo Display Section -->
-                    <div style="flex: 0 0 160px; text-align: center;">
+                    <div style="flex: 0 1 160px; text-align: center; min-width: 140px;">
                         <div id="photo-preview-container" class="photo-preview-container" onclick="handlePhotoClick()">
                             <div id="photo-preview"
                                 style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
@@ -946,30 +978,42 @@
                         <div class="form-group" style="grid-column: 1 / -1;">
                             <label class="form-label" style="display: flex; justify-content: space-between;">
                                 <span><i class="fas fa-id-card"></i> Login Credentials</span>
-                                <span id="login-status-badge" style="font-size: 0.65rem; color: #059669; background: #d1fae5; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-weight: 600;">Using Email</span>
+                                <span id="login-status-badge"
+                                    style="font-size: 0.65rem; color: #059669; background: #d1fae5; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-weight: 600;">Using
+                                    Email</span>
                             </label>
-                            <div style="background: #f0f9ff; border: 1px solid #bfdbfe; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                            <div
+                                style="background: #f0f9ff; border: 1px solid #bfdbfe; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
                                 <p style="font-size: 0.875rem; color: #1e40af; margin-bottom: 0.5rem;">
-                                    <i class="fas fa-info-circle"></i> Set your Faculty ID to use it for login instead of email.
+                                    <i class="fas fa-info-circle"></i> Set your Faculty ID to use it for login instead
+                                    of email.
                                 </p>
-                                <p style="font-size: 0.75rem; color: #1e3a8a;">Once set, you can login using your Faculty ID and password.</p>
+                                <p style="font-size: 0.75rem; color: #1e3a8a;">Once set, you can login using your
+                                    Faculty ID and password.</p>
                             </div>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div
+                                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
                                 <div>
-                                    <label class="form-label" style="font-size: 0.75rem; color: #475569;">Current Login ID</label>
+                                    <label class="form-label" style="font-size: 0.75rem; color: #475569;">Current Login
+                                        ID</label>
                                     <input type="text" id="current-login-id" class="form-input"
-                                        style="padding-left: 0.875rem; background: #f8fafc; cursor: not-allowed; font-size: 0.875rem;" readonly>
+                                        style="padding-left: 0.875rem; background: #f8fafc; cursor: not-allowed; font-size: 0.875rem;"
+                                        readonly>
                                 </div>
                                 <div>
-                                    <label class="form-label" style="font-size: 0.75rem; color: #475569;">Faculty ID (Optional)</label>
-                                    <input type="text" id="faculty-id-input" class="form-input" placeholder="Enter your faculty ID number"
+                                    <label class="form-label" style="font-size: 0.75rem; color: #475569;">Faculty ID
+                                        (Optional)</label>
+                                    <input type="text" id="faculty-id-input" class="form-input"
+                                        placeholder="Enter your faculty ID number"
                                         style="padding-left: 0.875rem; font-size: 0.875rem;">
                                 </div>
                             </div>
-                            <button type="button" id="set-faculty-id-btn" class="btn btn-primary" style="width: 100%; padding: 0.625rem; font-size: 0.875rem;">
+                            <button type="button" id="set-faculty-id-btn" class="btn btn-primary"
+                                style="width: 100%; padding: 0.625rem; font-size: 0.875rem;">
                                 <i class="fas fa-save"></i> Set Faculty ID
                             </button>
-                            <div id="faculty-id-message" style="margin-top: 0.5rem; font-size: 0.75rem; color: #059669; display: none;">
+                            <div id="faculty-id-message"
+                                style="margin-top: 0.5rem; font-size: 0.75rem; color: #059669; display: none;">
                                 <i class="fas fa-check-circle"></i> <span id="faculty-id-message-text"></span>
                             </div>
                         </div>
@@ -1013,18 +1057,21 @@
                     Weekly Timetable
                 </h3>
                 <div style="padding-bottom: 0.5rem;">
-                    <div id="timetable-body" class="grid-container">
-                        <div class="day-label" style="color: var(--primary-600);">Day</div>
-                        <div class="tt-header">I<br>8:45-9:45</div>
-                        <div class="tt-header">II<br>9:45-10:45</div>
-                        <div class="tt-header">Break</div>
-                        <div class="tt-header">III<br>11:05-12:05</div>
-                        <div class="tt-header">IV<br>12:05-12:55</div>
-                        <div class="tt-header">Lunch</div>
-                        <div class="tt-header">V<br>1:45-2:45</div>
-                        <div class="tt-header">Break</div>
-                        <div class="tt-header">VI<br>3:00-3:50</div>
-                        <div class="tt-header">VII<br>3:50-4:40</div>
+                    <div id="timetable-wrapper" class="table-responsive"
+                        style="border-radius: var(--radius-md); border: 1px solid var(--border-medium); overflow-x: auto;">
+                        <div id="timetable-body" class="grid-container" style="min-width: 900px; border: none;">
+                            <div class="day-label" style="color: var(--primary-600);">Day</div>
+                            <div class="tt-header">I<br>8:45-9:45</div>
+                            <div class="tt-header">II<br>9:45-10:45</div>
+                            <div class="tt-header">Break</div>
+                            <div class="tt-header">III<br>11:05-12:05</div>
+                            <div class="tt-header">IV<br>12:05-12:55</div>
+                            <div class="tt-header">Lunch</div>
+                            <div class="tt-header">V<br>1:45-2:45</div>
+                            <div class="tt-header">Break</div>
+                            <div class="tt-header">VI<br>3:00-3:50</div>
+                            <div class="tt-header">VII<br>3:50-4:40</div>
+                        </div>
                     </div>
                 </div>
                 <div style="margin-top: 2rem; display: flex; justify-content: flex-end;">
@@ -1260,7 +1307,7 @@
             // Faculty ID update
             document.getElementById('current-login-id').value = saved.facultyId || saved.id || '';
             document.getElementById('faculty-id-input').value = saved.facultyId || '';
-            
+
             // Update login status badge
             const loginStatusBadge = document.getElementById('login-status-badge');
             if (saved.facultyId) {
@@ -1599,11 +1646,11 @@
                 if (profile) {
                     profile.timetable = timetableData;
                     profile.photo = uploadedPhotoBase64; // Preserve local unsaved photo
-                    
+
                     // Update handling strings in the profile before saving
                     profile.subjectHandling = document.getElementById('subject-handling').value;
                     profile.classHandling = document.getElementById('class-handling').value;
-                    
+
                     await db.saveProfile(targetUserId, profile);
                     showToast('Timetable updated successfully!', 'success');
                 }
@@ -1618,7 +1665,7 @@
         function previewPhoto(input) {
             if (input.files && input.files[0]) {
                 const file = input.files[0];
-                
+
                 // Validate photo size
                 if (file.size > MAX_PHOTO_SIZE) {
                     showToast(`Photo size exceeds ${MAX_PHOTO_SIZE / (1024 * 1024)}MB limit. Please select a smaller image.`, 'error');
@@ -1629,7 +1676,7 @@
                 const reader = new FileReader();
                 reader.onload = function (e) {
                     uploadedPhotoBase64 = e.target.result;
-                    
+
                     // Also validate base64 size to ensure it doesn't exceed limits when sent to server
                     if (uploadedPhotoBase64.length > MAX_BASE64_SIZE) {
                         showToast('Photo is too large even after encoding. Please select a smaller image.', 'error');
@@ -1720,12 +1767,12 @@
                 Object.values(timetableData).forEach(data => {
                     if (!data) return;
                     if (data.subject) subjectsSet.add(data.subject);
-                    
+
                     if (data.year) {
                         const y = data.year;
                         const suffix = y == '1' ? 'st' : y == '2' ? 'nd' : y == '3' ? 'rd' : 'th';
                         const yearPrefix = `${y}${suffix} Year`;
-                        
+
                         if (data.isElective && Array.isArray(data.sections)) {
                             // Skip adding multiple class selections to Class Handling per user request
                         } else if (data.section) {
@@ -1741,7 +1788,7 @@
             // Always update hidden inputs first
             const subInput = document.getElementById('subject-handling');
             const clsInput = document.getElementById('class-handling');
-            
+
             if (subInput) subInput.value = finalSubs;
             if (clsInput) clsInput.value = finalClasses;
 
@@ -1798,18 +1845,18 @@
                     messageEl.style.padding = '0.5rem';
                     messageEl.style.borderRadius = '0.25rem';
                     messageText.textContent = 'Faculty ID set successfully! You can now login with your Faculty ID.';
-                    
+
                     // Update UI
                     document.getElementById('current-login-id').value = facultyIdInput;
                     const loginStatusBadge = document.getElementById('login-status-badge');
                     loginStatusBadge.textContent = 'Using Faculty ID';
                     loginStatusBadge.style.color = '#065f46';
                     loginStatusBadge.style.background = '#d1fae5';
-                    
+
                     // Disable button temporarily
                     this.disabled = true;
                     this.style.opacity = '0.6';
-                    
+
                     setTimeout(() => {
                         this.disabled = false;
                         this.style.opacity = '1';

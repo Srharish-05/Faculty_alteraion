@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: clamp(0.5rem, 3vw, 1.25rem);
         }
 
         .container {
@@ -30,7 +30,7 @@
         .header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 30px;
+            padding: clamp(1.5rem, 5vw, 2rem);
             text-align: center;
         }
 
@@ -70,7 +70,7 @@
         }
 
         .content {
-            padding: 30px;
+            padding: clamp(1rem, 4vw, 2rem);
         }
 
         .table-responsive {
@@ -204,8 +204,8 @@
 
         .form-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: clamp(0.75rem, 2vw, 1.25rem);
         }
 
         .modal {

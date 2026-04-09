@@ -802,8 +802,28 @@ async function initInMemoryDB() {
     // Initialize empty notification store
     inMemoryStore.notifications = {};
     
+    // Seed default admin account in-memory
+    inMemoryStore.profiles['admin@mkce.ac.in'] = {
+        id: 'admin@mkce.ac.in',
+        name: 'MKCE Admin',
+        role: 'admin',
+        password: 'admin123',
+        dept: 'Administration'
+    };
+    
+    // Seed default faculty account in-memory
+    inMemoryStore.profiles['faculty@mkce.ac.in'] = {
+        id: 'faculty@mkce.ac.in',
+        name: 'MKCE Faculty',
+        role: 'faculty',
+        password: '12345678',
+        dept: 'ECE'
+    };
+
     inMemoryStore.initialized = true;
-    console.log('✅ In-memory database initialized');
+    console.log('✅ In-memory database initialized with default accounts');
+    console.log('   - Admin: admin@mkce.ac.in / admin123');
+    console.log('   - Faculty: faculty@mkce.ac.in / 12345678');
 }
 
 startServer();
