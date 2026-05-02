@@ -4,12 +4,17 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const crypto = require('crypto');
+const http = require('http');
+const https = require('https');
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI;
 const DATABASE_NAME = process.env.DATABASE_NAME || 'faculty_db';
+const ENABLE_SELF_PING = String(process.env.ENABLE_SELF_PING || '').toLowerCase() === 'true';
+const KEEP_ALIVE_URL = process.env.KEEP_ALIVE_URL || process.env.RENDER_EXTERNAL_URL || '';
+const SELF_PING_INTERVAL_MS = Number(process.env.SELF_PING_INTERVAL_MS || 14 * 60 * 1000);
 
 app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
@@ -23,6 +28,14 @@ app.use(express.static(path.join(__dirname, './'), {
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.get('/health', (req, res) => {
+    res.status(200).json({
+        ok: true,
+        mode: USE_IN_MEMORY ? 'in-memory' : 'mongodb',
+        timestamp: new Date().toISOString()
+    });
 });
 
 // ==================== MONGOOSE SCHEMAS ====================
@@ -749,6 +762,48 @@ let USE_IN_MEMORY = false;
 
 // ==================== SERVER STARTUP ====================
 
+function pingUrl(urlString) {
+    try {
+        const target = new URL(urlString);
+        const client = target.protocol === 'https:' ? https : http;
+
+        const req = client.get(target, (res) => {
+            // Drain response to free socket.
+            res.resume();
+            console.log(`💓 Self-ping ${target.pathname} -> ${res.statusCode}`);
+        });
+
+        req.on('error', (err) => {
+            console.warn('⚠️  Self-ping failed:', err.message);
+        });
+
+        req.setTimeout(7000, () => {
+            req.destroy(new Error('Self-ping timeout'));
+        });
+    } catch (error) {
+        console.warn('⚠️  Invalid KEEP_ALIVE_URL:', error.message);
+    }
+}
+
+function startSelfPing() {
+    if (!ENABLE_SELF_PING) {
+        console.log('ℹ️  Self-ping is disabled (set ENABLE_SELF_PING=true to enable).');
+        return;
+    }
+
+    if (!KEEP_ALIVE_URL) {
+        console.warn('⚠️  ENABLE_SELF_PING=true but KEEP_ALIVE_URL is not set. Skipping self-ping.');
+        return;
+    }
+
+    const healthUrl = KEEP_ALIVE_URL.replace(/\/$/, '') + '/health';
+    console.log(`🔁 Self-ping enabled: ${healthUrl} every ${Math.floor(SELF_PING_INTERVAL_MS / 60000)} minute(s)`);
+
+    // Kick once quickly, then keep it warm.
+    setTimeout(() => pingUrl(healthUrl), 15 * 1000);
+    setInterval(() => pingUrl(healthUrl), SELF_PING_INTERVAL_MS);
+}
+
 async function startServer() {
     try {
         console.log('🔌 Connecting to MongoDB...');
@@ -789,6 +844,7 @@ async function startServer() {
             if (USE_IN_MEMORY) {
                 console.log('📝 Note: Running with local in-memory storage (data will be lost on restart)');
             }
+            startSelfPing();
         });
     } catch (error) {
         console.error('❌ Server startup failed:', error.message);
