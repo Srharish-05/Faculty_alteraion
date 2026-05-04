@@ -17,11 +17,12 @@
 Render free instances sleep after inactivity. To reduce sleep:
 
 1. Set these environment variables in Render:
-	- `ENABLE_SELF_PING=true`
+	- Optional: `ENABLE_SELF_PING=true` (force enable)
+	- Optional: `AUTO_ENABLE_SELF_PING=true` (default already true)
 	- `KEEP_ALIVE_URL=https://<your-render-service>.onrender.com`
-	- Optional: `SELF_PING_INTERVAL_MS=840000`
-2. The app will ping `KEEP_ALIVE_URL/health` every 14 minutes.
+	- Optional: `SELF_PING_INTERVAL_MS=300000` (5 minutes)
+2. In production on Render, the app now auto-enables self-ping and pings `KEEP_ALIVE_URL/health` every 5 minutes by default.
 
 ### Important Note
 
-Self-ping helps reduce idle shutdowns, but the only guaranteed always-on option is a paid Render instance.
+Self-ping helps reduce idle shutdowns, but the only guaranteed always-on option is a paid Render instance (Starter or above).
