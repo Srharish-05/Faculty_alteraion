@@ -140,7 +140,6 @@ Built as an academic project at **M. Kumarasamy College of Engineering**, Karur.
 | Jeeva E | Developer |
 | Jeeva V | Developer |
 
-**Guide:** Mr. S. Mohanraj
 
 ---
 
